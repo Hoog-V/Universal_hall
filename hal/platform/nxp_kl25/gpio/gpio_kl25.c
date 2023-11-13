@@ -198,7 +198,7 @@ uhal_status_t gpio_set_interrupt_on_pin(const gpio_pin_t pin, gpio_irq_opt_t irq
 
     ((PORT_Type*)PORTS[port_num])->PCR[GPIO_PIN(pin)] |= PORT_PCR_IRQC(irq_opt.irq_condition);
 
-    if(port_num == 1) {
+    if(port_num == 0) {
         enable_irq_handler(PORTA_IRQn, 2);
     } else {
         enable_irq_handler(PORTD_IRQn, 2);

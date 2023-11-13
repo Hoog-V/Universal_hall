@@ -25,10 +25,16 @@
 #ifndef GPIO_IRQ_HANDLER_H
 #define GPIO_IRQ_HANDLER_H
 
+#ifndef DISABLE_GPIO_MODULE
+
+#include <MKL25Z4.h>
+#include <hal_gpio.h>
 #include <stdint.h>
 
 void gpio_irq_handler(const void *const hw) {
-
+    uint32_t interrupt_flag = ((PORT_Type *)hw)->ISFR;
+    ((PORT_Type *)hw)->ISFR = interrupt_flag;
 }
 
+#endif /* IFNDEF DISABLE_GPIO_MODULE */
 #endif

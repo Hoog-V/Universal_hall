@@ -29,7 +29,7 @@
 
 #ifndef DISABLE_GPIO_MODULE
 
-#include "gpio/gpio_irq_handler.h"
+#include "gpio/gpio_irq_handler.c"
 
 #endif
 

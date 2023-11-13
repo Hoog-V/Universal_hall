@@ -29,7 +29,7 @@
 
 #ifndef DISABLE_GPIO_MODULE
 
-#include "gpio/gpio_irq_handler.h"
+#include "gpio/gpio_irq_handler.c"
 
 #endif
 
@@ -37,11 +37,16 @@
 #include "bit_manipulation.h"
 
 void enable_irq_handler(IRQn_Type irq_type, uint8_t priority) {
-    NVIC_EnableIRQ(irq_type);
+    NVIC_DisableIRQ(irq_type);
+    NVIC_ClearPendingIRQ(irq_type);
     NVIC_SetPriority(irq_type, priority);
+    NVIC_EnableIRQ(irq_type);
 }
 
 
-void PORTA_IRQHandler() {
-   
+void PORTA_IRQHandler(void) {
+    gpio_irq_handler(PORTA);
+}
+void PORTD_IRQHandler(void) {
+    gpio_irq_handler(PORTD);
 }
