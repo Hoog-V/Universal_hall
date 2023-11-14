@@ -25,16 +25,22 @@
 
 #include <stddef.h>
 #include <fsl_device_registers.h>
-#include <irq/sercom_stuff.h>
+#include <irq/communication_peripheral_typedefs.h>
 
 #ifndef DISABLE_GPIO_MODULE
 
-#include "gpio/gpio_irq_handler.c"
+#include "hal_gpio.h"
 
+#endif
+
+#ifndef DISABLE_I2C_MODULE
+#include "hal_i2c_host.h"
 #endif
 
 
 #include "bit_manipulation.h"
+
+
 
 void enable_irq_handler(IRQn_Type irq_type, uint8_t priority) {
     NVIC_DisableIRQ(irq_type);
@@ -49,4 +55,13 @@ void PORTA_IRQHandler(void) {
 }
 void PORTD_IRQHandler(void) {
     gpio_irq_handler(PORTD);
+}
+
+void I2C0_IRQHandler(void) {
+    volatile bustransaction_t *bustransaction = &i2c_comm_peripheral_bus_trans[0];
+if(bustransaction->transaction_type >= PERIPH_ACT_I2C_TRANSMIT_NO_STOP) {
+    i2c_host_data_send_irq(I2C0, bustransaction);
+} else {
+    i2c_host_data_recv_irq(I2C0, bustransaction);
+}
 }

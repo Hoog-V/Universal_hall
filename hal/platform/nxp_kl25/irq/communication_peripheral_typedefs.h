@@ -22,8 +22,8 @@
 * Author:          Victor Hogeweij <hogeweyv@gmail.com>
 */
 
-#ifndef ATMELSAMD21_SERCOM_STUFF_H
-#define ATMELSAMD21_SERCOM_STUFF_H
+#ifndef COMMUNICATION_PERIPHERAL_TYPEDEFS_H
+#define COMMUNICATION_PERIPHERAL_TYPEDEFS_H
 
 #include <stdint.h>
 
@@ -38,25 +38,20 @@ typedef struct {
     uint8_t status;
 } bustransaction_t;
 
-extern volatile bustransaction_t sercom_bustrans_buffer[6];
+extern volatile bustransaction_t i2c_comm_peripheral_bus_trans[2];
+
+extern volatile bustransaction_t spi_comm_peripheral_bus_trans[2];
+
+extern volatile bustransaction_t uart_comm_peripheral_bus_trans[3];
 
 
 typedef enum {
-    SERCOM_NUM_0, SERCOM_NUM_1, SERCOM_NUM_2, SERCOM_NUM_3, SERCOM_NUM_4, SERCOM_NUM_5
-} sercom_num_t;
-
-typedef enum {
-    SERCOMACT_NONE,
-    SERCOMACT_IDLE_I2CS,
-    SERCOMACT_IDLE_I2CM,
-    SERCOMACT_IDLE_SPI_HOST,
-    SERCOMACT_IDLE_SPI_SLAVE,
-    SERCOMACT_I2C_DATA_TRANSMIT_NO_STOP,
-    SERCOMACT_I2C_DATA_TRANSMIT_STOP,
-    SERCOMACT_I2C_DATA_RECEIVE_STOP,
-    SERCOMACT_SPI_DATA_TRANSMIT,
-    SERCOMACT_SPI_DATA_RECEIVE
+    PERIPH_ACT_NONE,
+    PERIPH_ACT_I2C_TRANSMIT_NO_STOP,
+    PERIPH_ACT_I2C_TRANSMIT_STOP,
+    PERIPH_ACT_I2C_RECEIVE_NO_STOP,
+    PERIPH_ACT_I2C_RECEIVE_STOP
 } busactions_t;
 
 
-#endif //ATMELSAMD21_SERCOM_STUFF_H
+#endif // COMMUNICATION_PERIPHERAL_TYPEDEFS_H

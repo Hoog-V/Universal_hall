@@ -29,11 +29,9 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#include <sam.h>
 #include <stddef.h>
-#include "clock_system/peripheral_clocking.h"
 #include "error_handling.h"
-#include "irq/sercom_stuff.h"
+#include "irq/communication_peripheral_typedefs.h"
 
 typedef enum {
     I2C_PERIPHERAL_0,
@@ -46,27 +44,12 @@ typedef enum {
 
 typedef enum {
     I2C_CLK_SOURCE_USE_DEFAULT = 0x00,
-    I2C_CLK_SOURCE_FAST_CLKGEN0 = 0x01,
-    I2C_CLK_SOURCE_FAST_CLKGEN1 = 0x02,
-    I2C_CLK_SOURCE_FAST_CLKGEN2 = 0x03,
-    I2C_CLK_SOURCE_FAST_CLKGEN3 = 0x04,
-    I2C_CLK_SOURCE_FAST_CLKGEN4 = 0x05,
-    I2C_CLK_SOURCE_FAST_CLKGEN5 = 0x06,
-    I2C_CLK_SOURCE_FAST_CLKGEN6 = 0x07,
-    I2C_CLK_SOURCE_FAST_CLKGEN7 = 0x08,
-    I2C_CLK_SOURCE_SLOW_CLKGEN0 = 0x100,
-    I2C_CLK_SOURCE_SLOW_CLKGEN1 = 0x200,
-    I2C_CLK_SOURCE_SLOW_CLKGEN2 = 0x300,
-    I2C_CLK_SOURCE_SLOW_CLKGEN3 = 0x400,
-    I2C_CLK_SOURCE_SLOW_CLKGEN4 = 0x500,
-    I2C_CLK_SOURCE_SLOW_CLKGEN5 = 0x600,
-    I2C_CLK_SOURCE_SLOW_CLKGEN6 = 0x700,
-    I2C_CLK_SOURCE_SLOW_CLKGEN7 = 0x800,
 } i2c_clock_sources_t;
 
 typedef enum {
     I2C_EXTRA_OPT_NONE = 0,
-    I2C_EXTRA_OPT_4_WIRE_MODE = 1,
+    I2C_EXTRA_OPT_DMA = 2,
+    I2C_EXTRA_OPT_POLLING = 4,
     I2C_EXTRA_OPT_IRQ_PRIO_0 = 0x100,
     I2C_EXTRA_OPT_IRQ_PRIO_1 = 0x200,
     I2C_EXTRA_OPT_IRQ_PRIO_2 = 0x300,
@@ -75,47 +58,47 @@ typedef enum {
 
 #define I2C_HOST_INIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num, clock_sources, periph_clk_freq, baud_rate_freq, extra_configuration_options)          \
     do {                                                                                                                                             \
-        const uint32_t max_freq = 48000000;                                                                                                          \
-        const uint32_t min_freq = 200000;                                                                                                            \
-        const uint32_t max_supported_baud_rate = 1000000;                                                                                            \
-        const uint32_t min_supported_baud_rate = 100000;                                                                                             \
-        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
-                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
-        static_assert(clock_sources <= I2C_CLK_SOURCE_SLOW_CLKGEN7 && clock_sources >= I2C_CLK_SOURCE_USE_DEFAULT,                                   \
-                      "Invalid clock-source used for the i2c host driver!");                                                                         \
-        static_assert(periph_clk_freq <= max_freq, "I2C peripheral clock frequency higher than maximum allowed frequency");                          \
-        static_assert(periph_clk_freq >= min_freq,                                                                                                   \
-                      "I2C peripheral clock frequency has to be atleast higher than 2x the standard slow i2c baud_rate of 100KHz");                  \
-        static_assert(baud_rate_freq <= max_supported_baud_rate && baud_rate_freq >= min_supported_baud_rate,                                        \
-                      "Unsupported baud rate option set on I2C host driver!");                                                                       \
-        static_assert((extra_configuration_options <= I2C_EXTRA_OPT_IRQ_PRIO_3 && extra_configuration_options >= I2C_EXTRA_OPT_IRQ_PRIO_0)           \
-                          || extra_configuration_options == I2C_EXTRA_OPT_NONE,                                                                      \
-                      "Invalid IRQ priority set on I2C host driver!");                                                                               \
-        static_assert((extra_configuration_options & 0xFF) <= I2C_EXTRA_OPT_4_WIRE_MODE,                                                             \
-                      "Unsupported extra configurations options set on I2C host driver!");                                                           \
+//        const uint32_t max_freq = 48000000;                                                                                                          \
+//        const uint32_t min_freq = 200000;                                                                                                            \
+//        const uint32_t max_supported_baud_rate = 1000000;                                                                                            \
+//        const uint32_t min_supported_baud_rate = 100000;                                                                                             \
+//        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
+//                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
+//        static_assert(clock_sources <= I2C_CLK_SOURCE_SLOW_CLKGEN7 && clock_sources >= I2C_CLK_SOURCE_USE_DEFAULT,                                   \
+//                      "Invalid clock-source used for the i2c host driver!");                                                                         \
+//        static_assert(periph_clk_freq <= max_freq, "I2C peripheral clock frequency higher than maximum allowed frequency");                          \
+//        static_assert(periph_clk_freq >= min_freq,                                                                                                   \
+//                      "I2C peripheral clock frequency has to be atleast higher than 2x the standard slow i2c baud_rate of 100KHz");                  \
+//        static_assert(baud_rate_freq <= max_supported_baud_rate && baud_rate_freq >= min_supported_baud_rate,                                        \
+//                      "Unsupported baud rate option set on I2C host driver!");                                                                       \
+//        static_assert((extra_configuration_options <= I2C_EXTRA_OPT_IRQ_PRIO_3 && extra_configuration_options >= I2C_EXTRA_OPT_IRQ_PRIO_0)           \
+//                          || extra_configuration_options == I2C_EXTRA_OPT_NONE,                                                                      \
+//                      "Invalid IRQ priority set on I2C host driver!");                                                                               \
+//        static_assert((extra_configuration_options & 0xFF) <= I2C_EXTRA_OPT_4_WIRE_MODE,                                                             \
+//                      "Unsupported extra configurations options set on I2C host driver!");                                                           \
     } while (0);
 
 #define I2C_HOST_DEINIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num)                                                                                     \
     do {                                                                                                                                             \
-        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
-                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
+//        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
+//                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
     } while (0);
 
 #define I2C_HOST_WRITE_FUNC_PARAMETER_CHECK(i2c_peripheral_num, addr, write_buff, size, stop_bit)                                                    \
     do {                                                                                                                                             \
-        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
-                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
-        static_assert(addr <= 1023 && addr > 0, "Invalid I2C address given!");                                                                       \
-        static_assert(write_buff != NULL && sizeof(write_buff) >= size, "writebuffer is equal to NULL or buffer overflow!");                         \
-        static_assert(stop_bit <= 1, "Stop-bit can't have a higher value than 1!");                                                                  \
+//        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
+//                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
+//        static_assert(addr <= 1023 && addr > 0, "Invalid I2C address given!");                                                                       \
+//        static_assert(write_buff != NULL && sizeof(write_buff) >= size, "writebuffer is equal to NULL or buffer overflow!");                         \
+//        static_assert(stop_bit <= 1, "Stop-bit can't have a higher value than 1!");                                                                  \
     } while (0);
 
 #define I2C_HOST_READ_FUNC_PARAMETER_CHECK(i2c_peripheral_num, addr, read_buff, size)                                                                \
     do {                                                                                                                                             \
-        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
-                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
-        static_assert(addr <= 1023 && addr > 0, "Invalid I2C address given!");                                                                       \
-        static_assert(read_buff != NULL && sizeof(read_buff) >= size, "readbuffer is equal to NULL or buffer overflow!");                            \
+//        static_assert(i2c_peripheral_num <= I2C_PERIPHERAL_5 && i2c_peripheral_num >= I2C_PERIPHERAL_0,                                              \
+//                      "Invalid i2c peripheral instance number given to host driver!");                                                               \
+//        static_assert(addr <= 1023 && addr > 0, "Invalid I2C address given!");                                                                       \
+//        static_assert(read_buff != NULL && sizeof(read_buff) >= size, "readbuffer is equal to NULL or buffer overflow!");                            \
     } while (0);
 
 #define I2C_SLAVE_INIT_PARAMETER_CHECK(i2c_peripheral_num, slave_addr, clock_sources, extra_configuration_options)                              \

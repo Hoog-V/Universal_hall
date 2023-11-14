@@ -27,7 +27,7 @@
 
 #include <stddef.h>
 #include <sam.h>
-#include "irq/sercom_stuff.h"
+#include "irq/communication_peripheral_typedefs.h"
 
 void spi_host_data_send_irq(const void *hw, volatile bustransaction_t *transaction) {
     Sercom *sercom_instance = ((Sercom *) hw);

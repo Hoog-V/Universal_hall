@@ -29,7 +29,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "clock_system/peripheral_clocking.h"
-#include "irq/sercom_stuff.h"
+#include "irq/communication_peripheral_typedefs.h"
 
 typedef enum {
     SPI_PERIPHERAL_0,

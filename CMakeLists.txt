@@ -58,7 +58,10 @@ elseif (PLATFORM_DEFINED MATCHES "^CPU_MKL25")
   MESSAGE(STATUS "PLATFORM: NXP MKL25")
   add_library(Universal_hal "hal/platform/nxp_kl25/gpio/gpio_kl25.c"
                             "hal/platform/nxp_kl25/gpio/gpio_irq_handler.c"
-                            "hal/platform/nxp_kl25/irq/irq_bindings.c")
+                            "hal/platform/nxp_kl25/i2c_host/i2c.c"
+                            "hal/platform/nxp_kl25/i2c_host/i2c_host_irq_handler.c"
+                            "hal/platform/nxp_kl25/irq/irq_bindings.c"
+                            )
   target_include_directories(Universal_hal PUBLIC "hal/" "utils/" "hal/platform/nxp_kl25/")
   target_link_libraries(Universal_hal KL25Z_SDK::CMSIS)
 

@@ -27,7 +27,7 @@
 
 #include <stddef.h>
 #include <sam.h>
-#include "irq/sercom_stuff.h"
+#include "irq/communication_peripheral_typedefs.h"
 
 void spi_slave_chip_select_irq(const void *hw, volatile bustransaction_t *transaction) {
     ((Sercom *) hw)->SPI.INTFLAG.reg = SERCOM_SPI_INTFLAG_SSL;
