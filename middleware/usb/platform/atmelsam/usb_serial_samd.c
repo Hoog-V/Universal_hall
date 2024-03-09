@@ -65,7 +65,7 @@ uhal_status_t usb_serial_init(const usb_serial_inst_t serial_instance, const usb
 
 const uint8_t usb_serial_available(const usb_serial_inst_t serial_instance) {
 
-    return tud_cdc_n_available(serial_instance);
+    return tud_cdc_n_connected(serial_instance);
 }
 
 uhal_status_t usb_serial_write_bytes(const usb_serial_inst_t serial_instance, const uint8_t* buffer, const size_t size) {
