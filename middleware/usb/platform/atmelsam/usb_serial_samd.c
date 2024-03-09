@@ -53,9 +53,7 @@ uhal_status_t usb_serial_init(const usb_serial_inst_t serial_instance, const usb
 #endif
 
     SystemCoreClock = clock_frequency;
-#if CFG_TUSB_OS == OPT_OS_NONE
     SysTick_Config(clock_frequency / 1000);
-#endif
 
     volatile uint8_t res = tud_init(serial_instance);
 
