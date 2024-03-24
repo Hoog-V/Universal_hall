@@ -85,7 +85,8 @@ elseif(PLATFORM_DEFINED MATCHES "^PICO")
   set(UHAL_BUILD_TESTS NO)
   MESSAGE(STATUS "PICO Platform detected!")
   add_library(Universal_hal  "hal/platform/raspberrypi/gpio/gpio_raspberrypi.c"
-                             "hal/platform/raspberrypi/spi_host/spi.c")
+                             "hal/platform/raspberrypi/spi_host/spi.c"
+                             "hal/platform/raspberrypi/i2c_host/i2c.c")
   target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/raspberrypi")
   target_link_libraries(Universal_hal pico_stdlib hardware_spi)
 else ()
