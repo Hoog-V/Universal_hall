@@ -21,6 +21,7 @@
 *
 * Author:          Victor Hogeweij <hogeweyv@gmail.com>
 */
+
 #include "hal_gpio.h"
 #include <hardware/gpio.h>
 #include "bit_manipulation.h"

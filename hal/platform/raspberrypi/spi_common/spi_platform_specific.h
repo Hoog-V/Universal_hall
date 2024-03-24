@@ -1,9 +1,9 @@
 /**
-* \file            hal_spi_platform_specific.h
+* \file            spi_platform_specific.h
 * \brief           Include file with platform specific options for the SPI module
 */
 /*
-*  Copyright 2023 (C) Victor Hogeweij <hogeweyv@gmail.com>
+*  Copyright 2024 (C) Victor Hogeweij <hogeweyv@gmail.com>
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@
 * Author:          Victor Hogeweij <hogeweyv@gmail.com>
 */
 
-#ifndef RASPBERRYPICO_SPI_PLATFORM_SPECIFIC_H
-#define RASPBERRYPICO_SPI_PLATFORM_SPECIFIC_H
+#ifndef SPI_PLATFORM_SPECIFIC_H
+#define SPI_PLATFORM_SPECIFIC_H
 
 #include <stdint.h>
 #include <stdio.h>
@@ -118,4 +118,4 @@ typedef enum {
     do {                                                                                                                                             \
     } while (0);
 
-#endif //RASPBERRYPICO_SPI_PLATFORM_SPECIFIC_H
+#endif /* SPI_PLATFORM_SPECIFIC_H */
