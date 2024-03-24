@@ -115,7 +115,7 @@ static inline void set_uart_clocks(const uart_peripheral_inst_t uart_peripheral,
 #endif
 }
 
-uhal_status_t uart_init(const uart_peripheral_inst_t uart_peripheral, const uint32_t baudrate, const uart_clock_sources_t clock_source,
+uhal_status_t uhal_uart_init(const uart_peripheral_inst_t uart_peripheral, const uint32_t baudrate, const uart_clock_sources_t clock_source,
                         const uint32_t clock_source_freq, const uart_extra_config_opt_t uart_extra_opt) {
 
     set_uart_clocks(uart_peripheral, clock_source);
@@ -162,7 +162,15 @@ uhal_status_t uart_init(const uart_peripheral_inst_t uart_peripheral, const uint
     return UHAL_STATUS_OK;
 }
 
-uhal_status_t uart_transmit(const uart_peripheral_inst_t uart_peripheral, const uint8_t* transmit_buffer, const size_t size) {
+uhal_status_t uhal_uart_deinit(const uart_peripheral_inst_t uart_peripheral) {
+    Sercom* const sercom_inst = uart_peripheral_mapping[uart_peripheral];
+    sercom_inst->USART.CTRLA.reg &= ~(SERCOM_USART_CTRLA_ENABLE);
+    uart_wait_for_sync(sercom_inst, (SERCOM_USART_SYNCBUSY_SWRST | SERCOM_USART_SYNCBUSY_ENABLE));
+    
+    return UHAL_STATUS_OK;
+}
+
+uhal_status_t uhal_uart_transmit(const uart_peripheral_inst_t uart_peripheral, const uint8_t* transmit_buffer, const size_t size) {
     Sercom* sercom_inst = uart_peripheral_mapping[uart_peripheral];
     sercom_inst->USART.CTRLB.reg |= SERCOM_USART_CTRLB_TXEN;
     for (uint8_t i = 0; i < size; i++) {
@@ -174,7 +182,7 @@ uhal_status_t uart_transmit(const uart_peripheral_inst_t uart_peripheral, const 
     return UHAL_STATUS_OK;
 }
 
-uhal_status_t uart_receive(const uart_peripheral_inst_t uart_peripheral, uint8_t* receive_buffer, const size_t size) {
+uhal_status_t uhal_uart_receive(const uart_peripheral_inst_t uart_peripheral, uint8_t* receive_buffer, const size_t size) {
     Sercom* sercom_inst = uart_peripheral_mapping[uart_peripheral];
     sercom_inst->USART.CTRLB.reg |= SERCOM_USART_CTRLB_RXEN;
     for (uint8_t i = 0; i < size; i++) {

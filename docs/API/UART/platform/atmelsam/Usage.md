@@ -8,7 +8,7 @@ For effective use of the UART peripheral, follow these essential steps:
 
 - [ ] Configure the system clocks for the UART peripheral (skip if using ASF or Arduino).
 - [ ] Set up the GPIO pins for the UART peripheral (details in the GPIO section).
-- [ ] Use the `uart_init` function with the right configuration settings.
+- [ ] Use the `uhal_uart_init` function with the right configuration settings.
 
 !!! note
     You can click on the checkmarks above to mark your progress.
@@ -24,7 +24,7 @@ Frameworks like Arduino and ASF typically handle most configurations. Both set c
 
 ### GPIO Pinmux Settings
 
-Apart from configuring the `uart_init()` function, you must link the GPIO pins to the hardware peripheral using the SAMD's pinmux with `gpio_set_pin_mode`.
+Apart from configuring the `uhal_uart_init()` function, you must link the GPIO pins to the hardware peripheral using the SAMD's pinmux with `gpio_set_pin_mode`.
 
 ```c
 void gpio_set_pin_mode(const gpio_pin_t pin, gpio_mode_t pin_mode);
@@ -45,11 +45,11 @@ void gpio_set_pin_mode(const gpio_pin_t pin, gpio_mode_t pin_mode);
 Use `uart_init` to initialize the UART hardware peripheral.
 
 ```c
-uhal_status_t uart_init(const uart_peripheral_inst_t uart_peripheral, 
-                        const uint32_t baudrate, 
-                        const uart_clock_sources_t clock_source, 
-                        const uint32_t clock_source_freq, 
-                        const uart_extra_config_opt_t uart_extra_opt);
+uhal_status_t uhal_uart_init(const uart_peripheral_inst_t uart_peripheral, 
+                             const uint32_t baudrate, 
+                             const uart_clock_sources_t clock_source, 
+                             const uint32_t clock_source_freq, 
+                             const uart_extra_config_opt_t uart_extra_opt);
 ```
 
 Set the following parameters:
@@ -173,7 +173,7 @@ Set the following parameters:
     void setup() {
        GPIO_SET_PIN_MODE(RX_PIN, GPIO_MODE_D);
        GPIO_SET_PIN_MODE(TX_PIN, GPIO_MODE_D);
-       uart_init(UART_PERIPHERAL,UART_BAUDRATE, UART_CLOCK_SOURCE, F_CPU, UART_CONFIG_OPTIONS);
+       uhal_uart_init(UART_PERIPHERAL,UART_BAUDRATE, UART_CLOCK_SOURCE, F_CPU, UART_CONFIG_OPTIONS);
     }
     ...
     ```

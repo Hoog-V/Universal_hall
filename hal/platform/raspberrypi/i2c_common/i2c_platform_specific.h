@@ -29,45 +29,22 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#include <stdint.h>
 #include <stddef.h>
 #include "error_handling.h"
+#include <irq/irq_typedefs.h>
 
 typedef enum {
     I2C_PERIPHERAL_0,
-    I2C_PERIPHERAL_1,
-    I2C_PERIPHERAL_2,
-    I2C_PERIPHERAL_3,
-    I2C_PERIPHERAL_4,
-    I2C_PERIPHERAL_5
+    I2C_PERIPHERAL_1
 } i2c_periph_inst_t;
 
 typedef enum {
-    I2C_CLK_SOURCE_USE_DEFAULT = 0x00,
-    I2C_CLK_SOURCE_FAST_CLKGEN0 = 0x01,
-    I2C_CLK_SOURCE_FAST_CLKGEN1 = 0x02,
-    I2C_CLK_SOURCE_FAST_CLKGEN2 = 0x03,
-    I2C_CLK_SOURCE_FAST_CLKGEN3 = 0x04,
-    I2C_CLK_SOURCE_FAST_CLKGEN4 = 0x05,
-    I2C_CLK_SOURCE_FAST_CLKGEN5 = 0x06,
-    I2C_CLK_SOURCE_FAST_CLKGEN6 = 0x07,
-    I2C_CLK_SOURCE_FAST_CLKGEN7 = 0x08,
-    I2C_CLK_SOURCE_SLOW_CLKGEN0 = 0x100,
-    I2C_CLK_SOURCE_SLOW_CLKGEN1 = 0x200,
-    I2C_CLK_SOURCE_SLOW_CLKGEN2 = 0x300,
-    I2C_CLK_SOURCE_SLOW_CLKGEN3 = 0x400,
-    I2C_CLK_SOURCE_SLOW_CLKGEN4 = 0x500,
-    I2C_CLK_SOURCE_SLOW_CLKGEN5 = 0x600,
-    I2C_CLK_SOURCE_SLOW_CLKGEN6 = 0x700,
-    I2C_CLK_SOURCE_SLOW_CLKGEN7 = 0x800,
+    I2C_CLK_SOURCE_USE_DEFAULT = 0x00
 } i2c_clock_sources_t;
 
 typedef enum {
-    I2C_EXTRA_OPT_NONE = 0,
-    I2C_EXTRA_OPT_4_WIRE_MODE = 1,
-    I2C_EXTRA_OPT_IRQ_PRIO_0 = 0x100,
-    I2C_EXTRA_OPT_IRQ_PRIO_1 = 0x200,
-    I2C_EXTRA_OPT_IRQ_PRIO_2 = 0x300,
-    I2C_EXTRA_OPT_IRQ_PRIO_3 = 0x400
+    I2C_EXTRA_OPT_NONE = 0
 } i2c_extra_opt_t;
 
 #define I2C_HOST_INIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num, clock_sources, periph_clk_freq, baud_rate_freq, extra_configuration_options)          \

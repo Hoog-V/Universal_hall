@@ -86,9 +86,10 @@ elseif(PLATFORM_DEFINED MATCHES "^PICO")
   MESSAGE(STATUS "PICO Platform detected!")
   add_library(Universal_hal  "hal/platform/raspberrypi/gpio/gpio_raspberrypi.c"
                              "hal/platform/raspberrypi/spi_host/spi.c"
-                             "hal/platform/raspberrypi/i2c_host/i2c.c")
+                             "hal/platform/raspberrypi/i2c_host/i2c.c"
+                             "hal/platform/raspberrypi/uart/uart.c")
   target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/raspberrypi")
-  target_link_libraries(Universal_hal pico_stdlib hardware_spi)
+  target_link_libraries(Universal_hal pico_stdlib hardware_spi hardware_i2c hardware_uart)
 else ()
     # You can define your OS here if desired
     MESSAGE(STATUS "No MCU platform selected!")

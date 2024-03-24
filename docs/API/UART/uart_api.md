@@ -6,32 +6,35 @@ The API for UART functionality has the following functions available:
 
 ```c
 /* UART driver initialization function (without compile-time parameter checking) */
-uhal_status_t uart_init(const uart_peripheral_inst_t uart_peripheral, 
-                        const uint32_t baudrate, 
-                        const uart_clock_sources_t clock_source, 
-                        const uint32_t clock_source_freq, 
-                        const uart_extra_config_opt_t uart_extra_opt);
+uhal_status_t uhal_uart_init(const uart_peripheral_inst_t uart_peripheral, 
+                             const uint32_t baudrate, 
+                             const uart_clock_sources_t clock_source, 
+                             const uint32_t clock_source_freq, 
+                             const uart_extra_config_opt_t uart_extra_opt);
 
 /* UART driver transmit function (without compile-time parameter checking) */
-uhal_status_t uart_transmit(const uart_peripheral_inst_t uart_peripheral, 
-                            const uint8_t* transmit_buffer, 
-                            const size_t size);
+uhal_status_t uhal_uart_transmit(const uart_peripheral_inst_t uart_peripheral, 
+                                 const uint8_t* transmit_buffer, 
+                                 const size_t size);
 
 /* UART driver receive function (without compile-time parameter checking) */
 uhal_status_t uart_receive(const uart_peripheral_inst_t uart_peripheral, 
                            uint8_t* receive_buffer, 
                            const size_t size);
 
+/* UART driver deinit function */
+uhal_status_t uhal_uart_deinit(const uart_peripheral_inst_t uart_peripheral);
+
 ```
 
 ## uart_init function
 
 ```c
-uhal_status_t uart_init(const uart_peripheral_inst_t uart_peripheral, 
-                        const uint32_t baudrate, 
-                        const uart_clock_sources_t clock_source, 
-                        const uint32_t clock_source_freq, 
-                        const uart_extra_config_opt_t uart_extra_opt);
+uhal_status_t uhal_uart_init(const uart_peripheral_inst_t uart_peripheral, 
+                             const uint32_t baudrate, 
+                             const uart_clock_sources_t clock_source, 
+                             const uint32_t clock_source_freq, 
+                             const uart_extra_config_opt_t uart_extra_opt);
 ```
 
 ### Description:
@@ -72,9 +75,9 @@ The `uart_init` function is designed for initializing a UART peripheral. It conf
 
 ```c
 
-uhal_status_t uart_transmit(const uart_peripheral_inst_t uart_peripheral, 
-                            const uint8_t* transmit_buffer, 
-                            const size_t size);
+uhal_status_t uhal_uart_transmit(const uart_peripheral_inst_t uart_peripheral, 
+                                 const uint8_t* transmit_buffer, 
+                                 const size_t size);
 
 ```
 
@@ -99,9 +102,9 @@ The `uart_transmit` function is used to transmit bytes over the serial bus.
 
 ```c
 
-uhal_status_t uart_receive(const uart_peripheral_inst_t uart_peripheral, 
-                            uint8_t* receive_buffer, 
-                            const size_t size);
+uhal_status_t uhal_uart_receive(const uart_peripheral_inst_t uart_peripheral, 
+                                uint8_t* receive_buffer, 
+                                const size_t size);
 
 ```
 
