@@ -40,7 +40,7 @@ TEST(HAL_UART, UART_DEFAULT_CLOCK_SOURCE) {
 
 TEST(HAL_UART, UART_CUSTOM_CLOCK_SOURCE) {
     const uart_peripheral_inst_t uart_peripheral = UART_PERIPHERAL_1;
-    uart_init(uart_peripheral, 115200, UART_CLK_SOURCE_FAST_CLKGEN4, (48 * 10 ^ 6), UART_EXTRA_OPT_USE_DEFAULT);
+    uhal_uart_init(uart_peripheral, 115200, UART_CLK_SOURCE_FAST_CLKGEN4, (48 * 10 ^ 6), UART_EXTRA_OPT_USE_DEFAULT);
     EXPECT_EQ(GCLK->GENDIV.bit.ID, 4);
     EXPECT_EQ(GCLK->CLKCTRL.bit.GEN, 4);
     EXPECT_EQ(GCLK->CLKCTRL.bit.ID, (GCLK_CLKCTRL_ID_SERCOM0_CORE_Val + uart_peripheral));
