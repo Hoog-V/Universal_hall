@@ -16,7 +16,7 @@
 cmake_minimum_required(VERSION 3.27)
 project(Universal_hal)
 
-option(UHAL_BUILD_TESTS Yes)
+option(UHAL_BUILD_TESTS "Enable building tests" NO)
 
 set(UHAL_FILEPATH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -81,6 +81,12 @@ if (PLATFORM_DEFINED MATCHES "^__SAMD21")
     target_compile_definitions(Universal_hal_usb_conf INTERFACE "-DCFG_TUSB_MCU=OPT_MCU_SAMD21")
     target_include_directories(Universal_hal_usb_conf INTERFACE "middleware/usb/lib/hw/bsp/")
   endif()
+elseif(PLATFORM_DEFINED MATCHES "^PICO")
+  set(UHAL_BUILD_TESTS NO)
+  MESSAGE(STATUS "PICO Platform detected!")
+  add_library(Universal_hal  "hal/platform/raspberrypi/gpio/gpio_raspberrypi.c")
+  target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/raspberrypi")
+  target_link_libraries(Universal_hal pico_stdlib)
 else ()
     # You can define your OS here if desired
     MESSAGE(STATUS "No MCU platform selected!")

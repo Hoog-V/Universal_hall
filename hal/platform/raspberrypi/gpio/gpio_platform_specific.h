@@ -29,8 +29,10 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#include <stdint.h>
+
 /**
- * @brief The SAMD series support two GPIO levels,
+ * @brief The raspberrypi pico supports two GPIO levels,
  *        LOW AND HIGH... Use this when using the
  *        set_gpio_pin_level() or get_gpio_pin_level() functions.
  */
@@ -56,15 +58,13 @@ typedef enum {
     GPIO_MODE_F9,
     GPIO_MODE_INPUT,
     GPIO_MODE_OUTPUT,
-    GPIO_MODE_NULL = 0x1F;
+    GPIO_MODE_NULL = 0x1F
 } gpio_mode_t;
 
 /**
  * @brief A pin on the RPI pico is represented as a number. Therefore this struct only consists of a char.
  */
-typedef struct {
-    uint8_t     pin_num;
-} gpio_pin_t;
+typedef uint8_t gpio_pin_t;
 
 /**
  * @brief The SAMD series have some special options:
