@@ -64,7 +64,7 @@ typedef enum {
 /**
  * @brief A pin on the RPI pico is represented as a number. Therefore this struct only consists of a char.
  */
-typedef uint8_t gpio_pin_t;
+typedef int8_t gpio_pin_t;
 
 /**
  * @brief The SAMD series have some special options:

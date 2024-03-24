@@ -84,9 +84,10 @@ if (PLATFORM_DEFINED MATCHES "^__SAMD21")
 elseif(PLATFORM_DEFINED MATCHES "^PICO")
   set(UHAL_BUILD_TESTS NO)
   MESSAGE(STATUS "PICO Platform detected!")
-  add_library(Universal_hal  "hal/platform/raspberrypi/gpio/gpio_raspberrypi.c")
+  add_library(Universal_hal  "hal/platform/raspberrypi/gpio/gpio_raspberrypi.c"
+                             "hal/platform/raspberrypi/spi_host/spi.c")
   target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/raspberrypi")
-  target_link_libraries(Universal_hal pico_stdlib)
+  target_link_libraries(Universal_hal pico_stdlib hardware_spi)
 else ()
     # You can define your OS here if desired
     MESSAGE(STATUS "No MCU platform selected!")
