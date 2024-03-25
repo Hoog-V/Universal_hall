@@ -146,51 +146,51 @@ static inline void default_sercom_isr_handler(const void *const hw, volatile bus
     }
 }
 
-__attribute__((used)) void SERCOM5_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void SERCOM5_Handler(void) {
     volatile bustransaction_t *bustransaction = &sercom_bustrans_buffer[5];
     Sercom *sercom_instance = SERCOM5;
     default_sercom_isr_handler(sercom_instance, bustransaction);
 }
 
-__attribute__((used)) void SERCOM4_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void SERCOM4_Handler(void) {
     volatile bustransaction_t *bustransaction = &sercom_bustrans_buffer[4];
     Sercom *sercom_instance = SERCOM4;
     default_sercom_isr_handler(sercom_instance, bustransaction);
 }
 
-__attribute__((used)) void SERCOM3_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void SERCOM3_Handler(void) {
     volatile bustransaction_t *bustransaction = &sercom_bustrans_buffer[3];
     Sercom *sercom_instance = SERCOM3;
     default_sercom_isr_handler(sercom_instance, bustransaction);
 }
 
-__attribute__((used)) void SERCOM2_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void SERCOM2_Handler(void) {
     volatile bustransaction_t *bustransaction = &sercom_bustrans_buffer[2];
     Sercom *sercom_instance = SERCOM2;
     default_sercom_isr_handler(sercom_instance, bustransaction);
 }
 
-__attribute__((used)) void SERCOM1_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void SERCOM1_Handler(void) {
     volatile bustransaction_t *bustransaction = &sercom_bustrans_buffer[1];
     Sercom *sercom_instance = SERCOM1;
     default_sercom_isr_handler(sercom_instance, bustransaction);
 }
 
-__attribute__((used)) void SERCOM0_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void SERCOM0_Handler(void) {
     volatile bustransaction_t *bustransaction = &sercom_bustrans_buffer[0];
     Sercom *sercom_instance = SERCOM0;
     default_sercom_isr_handler(sercom_instance, bustransaction);
 }
 
-__attribute__((used)) void EIC_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void EIC_Handler(void) {
     gpio_irq_handler(EIC);
 }
 
-__attribute__((used)) void NonMaskableInt_Handler(void) {
+__attribute__((used)) __attribute__((weak)) void NonMaskableInt_Handler(void) {
     gpio_irq_handler(EIC);
 }
 
-__attribute__((used)) void DMAC_Handler(){
+__attribute__((used)) __attribute__((weak)) void DMAC_Handler(){
 #ifndef DISABLE_DMA_HANDLER
     dma_irq_handler(DMAC);
 #endif
