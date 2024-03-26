@@ -94,7 +94,7 @@ elseif(PLATFORM_DEFINED MATCHES "^CPU_MCXA153VLH")
   set(UHAL_BUILD_TESTS NO)
   MESSAGE(STATUS "MCXA153 Platform detected!")
   add_library(Universal_hal "hal/platform/mcxa153/gpio/gpio_mcxa153.c")
-  target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/raspberrypi")
+  target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/mcxa153")
 else ()
     # You can define your OS here if desired
     MESSAGE(STATUS "No MCU platform selected!")

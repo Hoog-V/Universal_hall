@@ -103,7 +103,7 @@
 #define GPIO_PIN_P2_29 0x31D
 #define GPIO_PIN_P2_30 0x31E
 #define GPIO_PIN_P2_31 0x31F
-# endif
+#endif
 
 #if FSL_FEATURE_SOC_GPIO_COUNT >= 4
 #define GPIO_PIN_P3_0 0x400
@@ -116,11 +116,11 @@
 #define GPIO_PIN_P3_7 0x407
 #define GPIO_PIN_P3_8 0x408
 #define GPIO_PIN_P3_9 0x409
-#define GPIO_PIN_P3_10 040A
-#define GPIO_PIN_P3_11 040B
-#define GPIO_PIN_P3_12 040C
-#define GPIO_PIN_P3_13 040D
-#define GPIO_PIN_P3_14 040E
+#define GPIO_PIN_P3_10 0x40A
+#define GPIO_PIN_P3_11 0x40B
+#define GPIO_PIN_P3_12 0x40C
+#define GPIO_PIN_P3_13 0x40D
+#define GPIO_PIN_P3_14 0x40E
 #define GPIO_PIN_P3_15 0x40F
 #define GPIO_PIN_P3_16 0x410
 #define GPIO_PIN_P3_17 0x411
