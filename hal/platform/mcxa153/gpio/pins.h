@@ -1,0 +1,143 @@
+#ifndef PINS_H
+#define PINS_H
+#include <MCXA153_features.h>
+
+#define GPIO_PIN_P0_0 0x100
+#define GPIO_PIN_P0_1 0x101
+#define GPIO_PIN_P0_2 0x102
+#define GPIO_PIN_P0_3 0x103
+#define GPIO_PIN_P0_4 0x104
+#define GPIO_PIN_P0_5 0x105
+#define GPIO_PIN_P0_6 0x106
+#define GPIO_PIN_P0_7 0x107
+#define GPIO_PIN_P0_8 0x108
+#define GPIO_PIN_P0_9 0x109
+#define GPIO_PIN_P0_10 0x10A
+#define GPIO_PIN_P0_11 0x10B
+#define GPIO_PIN_P0_12 0x10C
+#define GPIO_PIN_P0_13 0x10D
+#define GPIO_PIN_P0_14 0x10E
+#define GPIO_PIN_P0_15 0x10F
+#define GPIO_PIN_P0_16 0x110
+#define GPIO_PIN_P0_17 0x111
+#define GPIO_PIN_P0_18 0x112
+#define GPIO_PIN_P0_19 0x113
+#define GPIO_PIN_P0_20 0x114
+#define GPIO_PIN_P0_21 0x115
+#define GPIO_PIN_P0_22 0x116
+#define GPIO_PIN_P0_23 0x117
+#define GPIO_PIN_P0_24 0x118
+#define GPIO_PIN_P0_25 0x119
+#define GPIO_PIN_P0_26 0x11A
+#define GPIO_PIN_P0_27 0x11B
+#define GPIO_PIN_P0_28 0x11C
+#define GPIO_PIN_P0_29 0x11D
+#define GPIO_PIN_P0_30 0x11E
+#define GPIO_PIN_P0_31 0x11F
+
+#if FSL_FEATURE_SOC_GPIO_COUNT >= 2
+#define GPIO_PIN_P1_0 0x200
+#define GPIO_PIN_P1_1 0x201
+#define GPIO_PIN_P1_2 0x202
+#define GPIO_PIN_P1_3 0x203
+#define GPIO_PIN_P1_4 0x204
+#define GPIO_PIN_P1_5 0x205
+#define GPIO_PIN_P1_6 0x206
+#define GPIO_PIN_P1_7 0x207
+#define GPIO_PIN_P1_8 0x208
+#define GPIO_PIN_P1_9 0x209
+#define GPIO_PIN_P1_10 0x20A
+#define GPIO_PIN_P1_11 0x20B
+#define GPIO_PIN_P1_12 0x20C
+#define GPIO_PIN_P1_13 0x20D
+#define GPIO_PIN_P1_14 0x20E
+#define GPIO_PIN_P1_15 0x20F
+#define GPIO_PIN_P1_16 0x210
+#define GPIO_PIN_P1_17 0x211
+#define GPIO_PIN_P1_18 0x212
+#define GPIO_PIN_P1_19 0x213
+#define GPIO_PIN_P1_20 0x214
+#define GPIO_PIN_P1_21 0x215
+#define GPIO_PIN_P1_22 0x216
+#define GPIO_PIN_P1_23 0x217
+#define GPIO_PIN_P1_24 0x218
+#define GPIO_PIN_P1_25 0x219
+#define GPIO_PIN_P1_26 0x21A
+#define GPIO_PIN_P1_27 0x21B
+#define GPIO_PIN_P1_28 0x21C
+#define GPIO_PIN_P1_29 0x21D
+#define GPIO_PIN_P1_30 0x21E
+#define GPIO_PIN_P1_31 0x21F
+#endif
+
+#if FSL_FEATURE_SOC_GPIO_COUNT >= 3
+#define GPIO_PIN_P2_0 0x300
+#define GPIO_PIN_P2_1 0x301
+#define GPIO_PIN_P2_2 0x302
+#define GPIO_PIN_P2_3 0x303
+#define GPIO_PIN_P2_4 0x304
+#define GPIO_PIN_P2_5 0x305
+#define GPIO_PIN_P2_6 0x306
+#define GPIO_PIN_P2_7 0x307
+#define GPIO_PIN_P2_8 0x308
+#define GPIO_PIN_P2_9 0x309
+#define GPIO_PIN_P2_10 0x30A
+#define GPIO_PIN_P2_11 0x30B
+#define GPIO_PIN_P2_12 0x30C
+#define GPIO_PIN_P2_13 0x30D
+#define GPIO_PIN_P2_14 0x30E
+#define GPIO_PIN_P2_15 0x30F
+#define GPIO_PIN_P2_16 0x310
+#define GPIO_PIN_P2_17 0x311
+#define GPIO_PIN_P2_18 0x312
+#define GPIO_PIN_P2_19 0x313
+#define GPIO_PIN_P2_20 0x314
+#define GPIO_PIN_P2_21 0x315
+#define GPIO_PIN_P2_22 0x316
+#define GPIO_PIN_P2_23 0x317
+#define GPIO_PIN_P2_24 0x318
+#define GPIO_PIN_P2_25 0x319
+#define GPIO_PIN_P2_26 0x31A
+#define GPIO_PIN_P2_27 0x31B
+#define GPIO_PIN_P2_28 0x31C
+#define GPIO_PIN_P2_29 0x31D
+#define GPIO_PIN_P2_30 0x31E
+#define GPIO_PIN_P2_31 0x31F
+# endif
+
+#if FSL_FEATURE_SOC_GPIO_COUNT >= 4
+#define GPIO_PIN_P3_0 0x400
+#define GPIO_PIN_P3_1 0x401
+#define GPIO_PIN_P3_2 0x402
+#define GPIO_PIN_P3_3 0x403
+#define GPIO_PIN_P3_4 0x404
+#define GPIO_PIN_P3_5 0x405
+#define GPIO_PIN_P3_6 0x406
+#define GPIO_PIN_P3_7 0x407
+#define GPIO_PIN_P3_8 0x408
+#define GPIO_PIN_P3_9 0x409
+#define GPIO_PIN_P3_10 040A
+#define GPIO_PIN_P3_11 040B
+#define GPIO_PIN_P3_12 040C
+#define GPIO_PIN_P3_13 040D
+#define GPIO_PIN_P3_14 040E
+#define GPIO_PIN_P3_15 0x40F
+#define GPIO_PIN_P3_16 0x410
+#define GPIO_PIN_P3_17 0x411
+#define GPIO_PIN_P3_18 0x412
+#define GPIO_PIN_P3_19 0x413
+#define GPIO_PIN_P3_20 0x414
+#define GPIO_PIN_P3_21 0x415
+#define GPIO_PIN_P3_22 0x416
+#define GPIO_PIN_P3_23 0x417
+#define GPIO_PIN_P3_24 0x418
+#define GPIO_PIN_P3_25 0x419
+#define GPIO_PIN_P3_26 0x41A
+#define GPIO_PIN_P3_27 0x41B
+#define GPIO_PIN_P3_28 0x41C
+#define GPIO_PIN_P3_29 0x41D
+#define GPIO_PIN_P3_30 0x41E
+#define GPIO_PIN_P3_31 0x41F
+#endif
+
+#endif
