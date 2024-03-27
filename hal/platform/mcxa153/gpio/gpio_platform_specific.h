@@ -59,14 +59,14 @@ typedef uint16_t gpio_pin_t;
  * @note If you want multiple options OR them together like this: options = GPIO_OPT_PULL_UP | GPIO_OPT_SAMPLE_CONTINUOUSLY;
  */
 typedef enum {
-    GPIO_OPT_PULL_UP = 1,
+    GPIO_OPT_LOCK = 1,
     GPIO_OPT_PULL_DOWN = 2,
-    GPIO_OPT_SLEW_RATE_SLOW = 4,
-    GPIO_OPT_SLEW_RATE_HIGH = 8,
-    GPIO_OPT_DRIVE_STRENGTH_VLOW = 16,
-    GPIO_OPT_DRIVE_STRENGTH_LOW = 32,
-    GPIO_OPT_DRIVE_STRENGTH_MEDIUM = 64,
-    GPIO_OPT_DRIVE_STRENGTH_HIGH = 128,
+    GPIO_OPT_PULL_UP = 4,
+    GPIO_OPT_SLOW_SLEW_RATE = 8,
+    GPIO_OPT_OPEN_DRAIN_OUTPUT = 32,
+    GPIO_OPT_DRIVE_STRENGTH_HIGH = 64,
+    GPIO_OPT_INPUT_BUFFER_ENABLE = 128,
+    GPIO_OPT_INVERT_INPUT = 256,
 } gpio_opt_t;
 
 /**
@@ -75,34 +75,19 @@ typedef enum {
  *        Most of the times if the pin number is under 15 it maps directly to the IRQ channel number, except 8 which is probably NMI.
  */
 typedef enum {
-    GPIO_IRQ_CHANNEL_0,
-    GPIO_IRQ_CHANNEL_1,
-    GPIO_IRQ_CHANNEL_2,
-    GPIO_IRQ_CHANNEL_3,
-    GPIO_IRQ_CHANNEL_4,
-    GPIO_IRQ_CHANNEL_5,
-    GPIO_IRQ_CHANNEL_6,
-    GPIO_IRQ_CHANNEL_7,
-    GPIO_IRQ_CHANNEL_8,
-    GPIO_IRQ_CHANNEL_9,
-    GPIO_IRQ_CHANNEL_10,
-    GPIO_IRQ_CHANNEL_11,
-    GPIO_IRQ_CHANNEL_12,
-    GPIO_IRQ_CHANNEL_13,
-    GPIO_IRQ_CHANNEL_14,
-    GPIO_IRQ_CHANNEL_15,
-    GPIO_IRQ_NMI
+    GPIO_IRQ_CHANNEL_DEFAULT
 } gpio_irq_channel_t;
 
 /**
  * @brief The RPI pico support the following signal conditions on which a GPIO irq can be triggered.
  */
 typedef enum {
-    GPIO_IRQ_NONE,
-    GPIO_IRQ_COND_RISING_EDGE,
-    GPIO_IRQ_COND_FALLING_EDGE,
-    GPIO_IRQ_COND_HIGH_LVL,
-    GPIO_IRQ_COND_LOW_LVL
+    GPIO_IRQ_NONE = 0,
+    GPIO_IRQ_COND_RISING_EDGE = 9,
+    GPIO_IRQ_COND_FALLING_EDGE = 10,
+    GPIO_IRQ_COND_BOTH_EDGES = 11,
+    GPIO_IRQ_COND_HIGH_LVL = 12,
+    GPIO_IRQ_COND_LOW_LVL = 8
 } gpio_irq_condition_t;
 
 /**
@@ -113,10 +98,7 @@ typedef enum {
  *        GPIO_IRQ_WAKE_FROM_SLEEP: When set interrupts will wake the MCU up from sleep modes
  */
 typedef enum {
-    GPIO_IRQ_EXTRA_NONE,
-    GPIO_IRQ_EXTRA_FILTERING,
-    GPIO_IRQ_USE_EVENTS,
-    GPIO_IRQ_WAKE_FROM_SLEEP
+    GPIO_IRQ_EXTRA_NONE
 } gpio_irq_extra_opt_t;
 
 /**

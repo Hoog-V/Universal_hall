@@ -93,7 +93,8 @@ elseif(PLATFORM_DEFINED MATCHES "^PICO")
 elseif(PLATFORM_DEFINED MATCHES "^CPU_MCXA153VLH")
   set(UHAL_BUILD_TESTS NO)
   MESSAGE(STATUS "MCXA153 Platform detected!")
-  add_library(Universal_hal "hal/platform/mcxa153/gpio/gpio_mcxa153.c")
+  add_library(Universal_hal "hal/platform/mcxa153/gpio/gpio_mcxa153.c"
+                            "hal/platform/mcxa153/irq/irq_bindings.c")
   target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/mcxa153")
 else ()
     # You can define your OS here if desired
