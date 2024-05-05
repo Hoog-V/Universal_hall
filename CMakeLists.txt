@@ -20,7 +20,7 @@ option(UHAL_BUILD_TESTS "Enable building tests" NO)
 
 set(UHAL_FILEPATH ${CMAKE_CURRENT_SOURCE_DIR})
 
-get_directory_property(PLATFORM_DEFINED COMPILE_DEFINITIONS)
+option(PLATFORM_DEFINED "The platform to build for" "")
 if (PLATFORM_DEFINED MATCHES "^__SAMD21")
     option(UHAL_DISABLE_GPIO_MODULE "Disable the GPIO module" NO)
     option(UHAL_DISABLE_I2C_HOST_MODULE "Disable the I2C Host module" NO)
