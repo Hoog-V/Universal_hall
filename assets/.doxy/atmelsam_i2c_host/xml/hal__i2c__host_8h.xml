@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="hal__i2c__host_8h" kind="file" language="C++">
+    <compoundname>hal_i2c_host.h</compoundname>
+    <includes local="yes">assert.h</includes>
+    <includes local="yes">error_handling.h</includes>
+    <includes local="yes">i2c_common/i2c_platform_specific.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>assert.h</label>
+      </node>
+      <node id="3">
+        <label>error_handling.h</label>
+      </node>
+      <node id="1">
+        <label>hal/hal_i2c_host.h</label>
+        <link refid="hal__i2c__host_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>i2c_common/i2c_platform_specific.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="hal__i2c__host_8h_1aee3e721fbf6fcabc4e1b9a4d52629e4e" prot="public" static="no">
+        <name>I2C_HOST_INIT</name>
+        <param><defname>i2c_peripheral_num</defname></param>
+        <param><defname>clock_sources</defname></param>
+        <param><defname>periph_clk_freq</defname></param>
+        <param><defname>baud_rate_freq</defname></param>
+        <param><defname>extra_configuration_options</defname></param>
+        <initializer>do {                                                                                                                    \
+    I2C_HOST_INIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num, clock_sources, periph_clk_freq, baud_rate_freq, extra_configuration_options); \
+    <ref refid="hal__i2c__host_8h_1aa08f5339631e7c4107c9950609220002" kindref="member">i2c_host_init</ref>(i2c_peripheral_num, clock_sources, periph_clk_freq, baud_rate_freq, extra_configuration_options);               \
+}while(0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="59" column="9" bodyfile="hal/hal_i2c_host.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal__i2c__host_8h_1a0d544b5461ec5bee7a94944633fd2c21" prot="public" static="no">
+        <name>I2C_HOST_DEINIT</name>
+        <param><defname>i2c_peripheral_num</defname></param>
+        <initializer>do {                                        \
+I2C_HOST_DEINIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num);    \
+<ref refid="hal__i2c__host_8h_1adefc131ffd51d1bb5f877e2f3dd24fc0" kindref="member">i2c_host_deinit</ref>(i2c_peripheral_num);\
+}while(0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="72" column="9" bodyfile="hal/hal_i2c_host.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal__i2c__host_8h_1afe2f22ad9f77685ae7634b07b3da1e18" prot="public" static="no">
+        <name>I2C_HOST_WRITE_BLOCKING</name>
+        <param><defname>i2c_peripheral_num</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>write_buff</defname></param>
+        <param><defname>size</defname></param>
+        <param><defname>stop_bit</defname></param>
+        <initializer>do {                                                                            \
+I2C_HOST_WRITE_FUNC_PARAMETER_CHECK(i2c_peripheral_num, addr, write_buff, size, stop_bit); \
+<ref refid="hal__i2c__host_8h_1aa93ce82617367d01b189c22f0cf914c2" kindref="member">i2c_host_write_blocking</ref>(i2c_peripheral_num, addr, write_buff, size, stop_bit);             \
+}while(0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="94" column="9" bodyfile="hal/hal_i2c_host.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal__i2c__host_8h_1ac7c2fa11632a7d8c47258b910bb91ed3" prot="public" static="no">
+        <name>I2C_HOST_WRITE_NON_BLOCKING</name>
+        <param><defname>i2c_peripheral_num</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>write_buff</defname></param>
+        <param><defname>size</defname></param>
+        <param><defname>stop_bit</defname></param>
+        <initializer>do {                                                                            \
+I2C_HOST_WRITE_FUNC_PARAMETER_CHECK(i2c_peripheral_num, addr, write_buff, size, stop_bit); \
+<ref refid="hal__i2c__host_8h_1a6064ab9b16f0bdb5f365ad432755851d" kindref="member">i2c_host_write_non_blocking</ref>(i2c_peripheral_num, addr, write_buff, size, stop_bit);             \
+}while(0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="116" column="9" bodyfile="hal/hal_i2c_host.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal__i2c__host_8h_1a5470ae4f625b32dd3d9197ea4ff8c518" prot="public" static="no">
+        <name>I2C_HOST_READ_BLOCKING</name>
+        <param><defname>i2c_peripheral_num</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>read_buff</defname></param>
+        <param><defname>size</defname></param>
+        <initializer>do {                                                                            \
+I2C_HOST_READ_FUNC_PARAMETER_CHECK(i2c_peripheral_num, addr, read_buff, size); \
+<ref refid="hal__i2c__host_8h_1a97e3b962db47c11e3d511b6cb6b951c3" kindref="member">i2c_host_read_blocking</ref>(i2c_peripheral_num, addr, read_buff, size);             \
+}while(0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="135" column="9" bodyfile="hal/hal_i2c_host.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="hal__i2c__host_8h_1a7527b5aeeeb38dc6c14b42bc77ddfa19" prot="public" static="no">
+        <name>I2C_HOST_READ_NON_BLOCKING</name>
+        <param><defname>i2c_peripheral_num</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>read_buff</defname></param>
+        <param><defname>size</defname></param>
+        <initializer>do {                                                                          \
+I2C_HOST_READ_FUNC_PARAMETER_CHECK(i2c_peripheral_num, addr, read_buff, size); \
+<ref refid="hal__i2c__host_8h_1a60bba309fb0bfe9c36034936d7786207" kindref="member">i2c_host_read_non_blocking</ref>(i2c_peripheral_num, addr, read_buff, size);             \
+}while(0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="154" column="9" bodyfile="hal/hal_i2c_host.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>i2c_stop_bit_t</name>
+        <enumvalue id="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aaae88daedd7161b59735bf54fe503aa0f" prot="public">
+          <name>I2C_NO_STOP_BIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aafa87bde35174bc6e36da878ab698f9bf" prot="public">
+          <name>I2C_STOP_BIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="38" column="1" bodyfile="hal/hal_i2c_host.h" bodystart="38" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hal__i2c__host_8h_1aa08f5339631e7c4107c9950609220002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uhal_status_t</type>
+        <definition>uhal_status_t i2c_host_init</definition>
+        <argsstring>(const i2c_periph_inst_t i2c_peripheral_num, const i2c_clock_sources_t clock_sources, const uint32_t periph_clk_freq, const uint32_t baud_rate_freq, const i2c_extra_opt_t extra_configuration_options)</argsstring>
+        <name>i2c_host_init</name>
+        <param>
+          <type>const i2c_periph_inst_t</type>
+          <declname>i2c_peripheral_num</declname>
+        </param>
+        <param>
+          <type>const i2c_clock_sources_t</type>
+          <declname>clock_sources</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>periph_clk_freq</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>baud_rate_freq</declname>
+        </param>
+        <param>
+          <type>const i2c_extra_opt_t</type>
+          <declname>extra_configuration_options</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the specified HW peripheral with I2C host functionality. To ensure platform compatibility use the default option as much as possible for each hw peripheral. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_peripheral_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The i2c peripheral to configure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clock_sources</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock source(s) to use.. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>periph_clk_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock frequency of the peripheral (if multiple clocks are used this will be the fastest frequency). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>baud_rate_freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C Clock frequency to be used in transactions (only used in host mode, when in slave mode every value will be discarded). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extra_configuration_options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extra configuration options like: - DMA use<itemizedlist>
+<listitem><para>4-Wire mode</para>
+</listitem><listitem><para>IRQ priority </para>
+</listitem></itemizedlist>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="55" column="15" declfile="hal/hal_i2c_host.h" declline="55" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1adefc131ffd51d1bb5f877e2f3dd24fc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uhal_status_t</type>
+        <definition>uhal_status_t i2c_host_deinit</definition>
+        <argsstring>(const i2c_periph_inst_t i2c_peripheral_num)</argsstring>
+        <name>i2c_host_deinit</name>
+        <param>
+          <type>const i2c_periph_inst_t</type>
+          <declname>i2c_peripheral_num</declname>
+        </param>
+        <briefdescription>
+<para>Function to de-initialize the specified HW peripheral (disables I2C on the HW peripheral). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_peripheral_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C options used when configuring the HW peripheral. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="69" column="15" declfile="hal/hal_i2c_host.h" declline="69" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1aa93ce82617367d01b189c22f0cf914c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uhal_status_t</type>
+        <definition>uhal_status_t i2c_host_write_blocking</definition>
+        <argsstring>(const i2c_periph_inst_t i2c_peripheral_num, const uint16_t addr, const uint8_t *write_buff, const size_t size, const i2c_stop_bit_t stop_bit)</argsstring>
+        <name>i2c_host_write_blocking</name>
+        <param>
+          <type>const i2c_periph_inst_t</type>
+          <declname>i2c_peripheral_num</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>write_buff</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const <ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" kindref="member">i2c_stop_bit_t</ref></type>
+          <declname>stop_bit</declname>
+        </param>
+        <briefdescription>
+<para>Function to execute a write blocking transaction (blocking means it will wait till the transaction is finished) This function does only work in host-mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_peripheral_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The i2c peripheral to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C address of the client device to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>write_buff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the write buffer with all the bytes that have to be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of bytes which have to be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stop_bit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Does this transaction end with or without a stop-bit: Value 1 is with stop-bit Value 0 is without stop-bit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="88" column="15" declfile="hal/hal_i2c_host.h" declline="88" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1a6064ab9b16f0bdb5f365ad432755851d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uhal_status_t</type>
+        <definition>uhal_status_t i2c_host_write_non_blocking</definition>
+        <argsstring>(const i2c_periph_inst_t i2c_peripheral_num, const uint16_t addr, const uint8_t *write_buff, const size_t size, const i2c_stop_bit_t stop_bit)</argsstring>
+        <name>i2c_host_write_non_blocking</name>
+        <param>
+          <type>const i2c_periph_inst_t</type>
+          <declname>i2c_peripheral_num</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>write_buff</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const <ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" kindref="member">i2c_stop_bit_t</ref></type>
+          <declname>stop_bit</declname>
+        </param>
+        <briefdescription>
+<para>Function to execute a write non-blocking transaction (non-blocking means it will not wait till the transaction is finished and stack them in a buffer or such) This function does only work in host-mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_peripheral_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The i2c peripheral to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C address of the client device to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>write_buff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the write buffer with all the bytes that have to be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of bytes which have to be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stop_bit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Does this transaction end with or without a stop-bit: Value 1 is with stop-bit Value 0 is without stop-bit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="110" column="15" declfile="hal/hal_i2c_host.h" declline="110" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1a97e3b962db47c11e3d511b6cb6b951c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uhal_status_t</type>
+        <definition>uhal_status_t i2c_host_read_blocking</definition>
+        <argsstring>(const i2c_periph_inst_t i2c_peripheral_num, const uint16_t addr, uint8_t *read_buff, const size_t amount_of_bytes)</argsstring>
+        <name>i2c_host_read_blocking</name>
+        <param>
+          <type>const i2c_periph_inst_t</type>
+          <declname>i2c_peripheral_num</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>read_buff</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>amount_of_bytes</declname>
+        </param>
+        <briefdescription>
+<para>Function to execute a read blocking transaction (blocking means it will wait till the transaction is finished) This function does only work in host-mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_peripheral_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The i2c peripheral to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C address of the client device to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>read_buff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the read buffer where all read bytes will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>amount_of_bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of bytes which have to be read </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="130" column="15" declfile="hal/hal_i2c_host.h" declline="130" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1a60bba309fb0bfe9c36034936d7786207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uhal_status_t</type>
+        <definition>uhal_status_t i2c_host_read_non_blocking</definition>
+        <argsstring>(const i2c_periph_inst_t i2c_peripheral_num, const uint16_t addr, uint8_t *read_buff, const size_t amount_of_bytes)</argsstring>
+        <name>i2c_host_read_non_blocking</name>
+        <param>
+          <type>const i2c_periph_inst_t</type>
+          <declname>i2c_peripheral_num</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>read_buff</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>amount_of_bytes</declname>
+        </param>
+        <briefdescription>
+<para>Function to execute a read non-blocking transaction (non-blocking means it will not wait till the transaction is finished and stack the transactions in to a buffer) This function does only work in host-mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i2c_peripheral_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The i2c peripheral to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C address of the client device to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>read_buff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the read buffer where all read bytes will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>amount_of_bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of bytes which have to be read </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="149" column="15" declfile="hal/hal_i2c_host.h" declline="149" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1a9989445a908f81c4288bb7acf2919b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void i2c_host_data_recv_irq</definition>
+        <argsstring>(const void *hw, volatile bustransaction_t *transaction) __attribute__((weak))</argsstring>
+        <name>i2c_host_data_recv_irq</name>
+        <param>
+          <type>const void *</type>
+          <declname>hw</declname>
+        </param>
+        <param>
+          <type>volatile bustransaction_t *</type>
+          <declname>transaction</declname>
+        </param>
+        <briefdescription>
+<para>IRQ handler for I2C host data receive interrupt. Gets run when a host read action is executed. By defining this function inside a source file outside the Universal HALL, the default IRQ handler will be overridden and the compiler will automatically link your own custom implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle to the HW peripheral on which the I2C bus is ran </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transaction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C transaction info about the current initialized transaction on the HW peripheral. The info will be automatically supplied when using the i2c_write and i2c_read functions below</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Using your own custom IRQ handler might break the use of the write and read functions listed above </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="171" column="6" declfile="hal/hal_i2c_host.h" declline="171" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="hal__i2c__host_8h_1acfeec02f655559ce321e8e6bd3aa5b85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void i2c_host_data_send_irq</definition>
+        <argsstring>(const void *hw, volatile bustransaction_t *transaction) __attribute__((weak))</argsstring>
+        <name>i2c_host_data_send_irq</name>
+        <param>
+          <type>const void *</type>
+          <declname>hw</declname>
+        </param>
+        <param>
+          <type>volatile bustransaction_t *</type>
+          <declname>transaction</declname>
+        </param>
+        <briefdescription>
+<para>IRQ handler for I2C host data send interrupt. Gets run when a host write action is executed. By defining this function inside a -Obinarsource file outside the Universal HALL, the default IRQ handler will be overridden and the compiler will automatically link your own custom implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle to the HW peripheral on which the I2C bus is ran </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transaction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C transaction info about the current initialized transaction on the HW peripheral. The info will be automatically supplied when using the i2c_write and i2c_read functions below.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Using your own custom IRQ handler might break the use of the write and read functions listed above </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="hal/hal_i2c_host.h" line="184" column="6" declfile="hal/hal_i2c_host.h" declline="184" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/>Copyright<sp/>2023<sp/>(C)<sp/>Victor<sp/>Hogeweij<sp/>&lt;hogeweyv@gmail.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Universal<sp/>Hal<sp/>Framework.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">*<sp/>Author:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Victor<sp/>Hogeweij<sp/>&lt;hogeweyv@gmail.com&gt;</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAL_I2C_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HAL_I2C_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Extern<sp/>c<sp/>for<sp/>compiling<sp/>with<sp/>c++*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__cplusplus<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DISABLE_I2C_HOST_MODULE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;assert.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;error_handling.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;i2c_common/i2c_platform_specific.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39" refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aaae88daedd7161b59735bf54fe503aa0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aaae88daedd7161b59735bf54fe503aa0f" kindref="member">I2C_NO_STOP_BIT</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aafa87bde35174bc6e36da878ab698f9bf" kindref="member">I2C_STOP_BIT</ref></highlight></codeline>
+<codeline lineno="41" refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aafa87bde35174bc6e36da878ab698f9bf" refkind="member"><highlight class="normal">}<sp/><ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" kindref="member">i2c_stop_bit_t</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="hal__i2c__host_8h_1aa08f5339631e7c4107c9950609220002" refkind="member"><highlight class="normal">uhal_status_t<sp/><ref refid="hal__i2c__host_8h_1aa08f5339631e7c4107c9950609220002" kindref="member">i2c_host_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_periph_inst_t<sp/>i2c_peripheral_num,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_clock_sources_t<sp/>clock_sources,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>periph_clk_freq,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>baud_rate_freq,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_extra_opt_t<sp/>extra_configuration_options);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="hal__i2c__host_8h_1aee3e721fbf6fcabc4e1b9a4d52629e4e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_HOST_INIT(i2c_peripheral_num,<sp/>clock_sources,<sp/>periph_clk_freq,<sp/>baud_rate_freq,<sp/>extra_configuration_options)<sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor">do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>I2C_HOST_INIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num,<sp/>clock_sources,<sp/>periph_clk_freq,<sp/>baud_rate_freq,<sp/>extra_configuration_options);<sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>i2c_host_init(i2c_peripheral_num,<sp/>clock_sources,<sp/>periph_clk_freq,<sp/>baud_rate_freq,<sp/>extra_configuration_options);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor">}while(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="hal__i2c__host_8h_1adefc131ffd51d1bb5f877e2f3dd24fc0" refkind="member"><highlight class="normal">uhal_status_t<sp/><ref refid="hal__i2c__host_8h_1adefc131ffd51d1bb5f877e2f3dd24fc0" kindref="member">i2c_host_deinit</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_periph_inst_t<sp/>i2c_peripheral_num);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="hal__i2c__host_8h_1a0d544b5461ec5bee7a94944633fd2c21" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_HOST_DEINIT(i2c_peripheral_num)<sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor">do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor">I2C_HOST_DEINIT_FUNC_PARAMETER_CHECK(i2c_peripheral_num);<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor">i2c_host_deinit(i2c_peripheral_num);\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor">}while(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="hal__i2c__host_8h_1aa93ce82617367d01b189c22f0cf914c2" refkind="member"><highlight class="normal">uhal_status_t<sp/><ref refid="hal__i2c__host_8h_1aa93ce82617367d01b189c22f0cf914c2" kindref="member">i2c_host_write_blocking</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_periph_inst_t<sp/>i2c_peripheral_num,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>addr,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*write_buff,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" kindref="member">i2c_stop_bit_t</ref><sp/>stop_bit);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="hal__i2c__host_8h_1afe2f22ad9f77685ae7634b07b3da1e18" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_HOST_WRITE_BLOCKING(i2c_peripheral_num,<sp/>addr,<sp/>write_buff,<sp/>size,<sp/>stop_bit)<sp/>\</highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor">do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor">I2C_HOST_WRITE_FUNC_PARAMETER_CHECK(i2c_peripheral_num,<sp/>addr,<sp/>write_buff,<sp/>size,<sp/>stop_bit);<sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor">i2c_host_write_blocking(i2c_peripheral_num,<sp/>addr,<sp/>write_buff,<sp/>size,<sp/>stop_bit);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor">}while(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="hal__i2c__host_8h_1a6064ab9b16f0bdb5f365ad432755851d" refkind="member"><highlight class="normal">uhal_status_t<sp/><ref refid="hal__i2c__host_8h_1a6064ab9b16f0bdb5f365ad432755851d" kindref="member">i2c_host_write_non_blocking</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_periph_inst_t<sp/>i2c_peripheral_num,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>addr,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*write_buff,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" kindref="member">i2c_stop_bit_t</ref><sp/>stop_bit);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="hal__i2c__host_8h_1ac7c2fa11632a7d8c47258b910bb91ed3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_HOST_WRITE_NON_BLOCKING(i2c_peripheral_num,<sp/>addr,<sp/>write_buff,<sp/>size,<sp/>stop_bit)<sp/>\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor">do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor">I2C_HOST_WRITE_FUNC_PARAMETER_CHECK(i2c_peripheral_num,<sp/>addr,<sp/>write_buff,<sp/>size,<sp/>stop_bit);<sp/>\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor">i2c_host_write_non_blocking(i2c_peripheral_num,<sp/>addr,<sp/>write_buff,<sp/>size,<sp/>stop_bit);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor">}while(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="hal__i2c__host_8h_1a97e3b962db47c11e3d511b6cb6b951c3" refkind="member"><highlight class="normal">uhal_status_t<sp/><ref refid="hal__i2c__host_8h_1a97e3b962db47c11e3d511b6cb6b951c3" kindref="member">i2c_host_read_blocking</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_periph_inst_t<sp/>i2c_peripheral_num,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>addr,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*read_buff,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>amount_of_bytes);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="hal__i2c__host_8h_1a5470ae4f625b32dd3d9197ea4ff8c518" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_HOST_READ_BLOCKING(i2c_peripheral_num,<sp/>addr,<sp/>read_buff,<sp/>size)<sp/>\</highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor">do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="137"><highlight class="preprocessor">I2C_HOST_READ_FUNC_PARAMETER_CHECK(i2c_peripheral_num,<sp/>addr,<sp/>read_buff,<sp/>size);<sp/>\</highlight></codeline>
+<codeline lineno="138"><highlight class="preprocessor">i2c_host_read_blocking(i2c_peripheral_num,<sp/>addr,<sp/>read_buff,<sp/>size);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="139"><highlight class="preprocessor">}while(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="hal__i2c__host_8h_1a60bba309fb0bfe9c36034936d7786207" refkind="member"><highlight class="normal">uhal_status_t<sp/><ref refid="hal__i2c__host_8h_1a60bba309fb0bfe9c36034936d7786207" kindref="member">i2c_host_read_non_blocking</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_periph_inst_t<sp/>i2c_peripheral_num,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>addr,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*read_buff,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>amount_of_bytes);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="hal__i2c__host_8h_1a7527b5aeeeb38dc6c14b42bc77ddfa19" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_HOST_READ_NON_BLOCKING(i2c_peripheral_num,<sp/>addr,<sp/>read_buff,<sp/>size)<sp/>\</highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor">do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="156"><highlight class="preprocessor">I2C_HOST_READ_FUNC_PARAMETER_CHECK(i2c_peripheral_num,<sp/>addr,<sp/>read_buff,<sp/>size);<sp/>\</highlight></codeline>
+<codeline lineno="157"><highlight class="preprocessor">i2c_host_read_non_blocking(i2c_peripheral_num,<sp/>addr,<sp/>read_buff,<sp/>size);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor">}while(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="hal__i2c__host_8h_1a9989445a908f81c4288bb7acf2919b27" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hal__i2c__host_8h_1a9989445a908f81c4288bb7acf2919b27" kindref="member">i2c_host_data_recv_irq</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*hw,<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>bustransaction_t<sp/>*transaction)<sp/>__attribute__((weak));</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="hal__i2c__host_8h_1acfeec02f655559ce321e8e6bd3aa5b85" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hal__i2c__host_8h_1acfeec02f655559ce321e8e6bd3aa5b85" kindref="member">i2c_host_data_send_irq</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*hw,<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>bustransaction_t<sp/>*transaction)<sp/>__attribute__((weak));</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>IFNDEF<sp/>DISABLE_I2C_HOST_MODULE*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__cplusplus<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="hal/hal_i2c_host.h"/>
+  </compounddef>
+</doxygen>

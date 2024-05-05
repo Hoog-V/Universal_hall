@@ -1,0 +1,3657 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../dma_compatibility/">
+      
+      
+        <link rel="next" href="../platform/atmelsam/About/">
+      
+      
+      <link rel="icon" href="../../../assets/Universal_hal_logo_top_bar.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>General API - Universal_hal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dma-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Universal_hal" class="md-header__button md-logo" aria-label="Universal_hal" data-md-component="logo">
+      
+  <img src="../../../assets/Universal_hal_logo_top_bar.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Universal_hal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Universal_hal" class="md-nav__button md-logo" aria-label="Universal_hal" data-md-component="logo">
+      
+  <img src="../../../assets/Universal_hal_logo_top_bar.svg" alt="logo">
+
+    </a>
+    Universal_hal
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GPIO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GPIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/gpio_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/gpio_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3_1" id="__nav_2_1_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/platform/atmelsam/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    I2C Host
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            I2C Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/i2c_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/i2c_host_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1_4" id="__nav_2_2_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Doxygen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Doxygen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struct List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struct Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/macros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Macros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    I2C Slave
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            I2C Slave
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/i2c_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/i2c_slave_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3_1" id="__nav_2_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SPI Host
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            SPI Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/spi_host_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/spi_host_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1" id="__nav_2_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SPI Slave
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            SPI Slave
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/spi_slave_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/spi_slave_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3_1" id="__nav_2_5_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UART
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            UART
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/uart_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/uart_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3_1" id="__nav_2_6_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DMA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            DMA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dma_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_transfer_mem-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_transfer_mem function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_transfer_mem function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_transfer_peripheral_to_mem-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_transfer_peripheral_to_mem function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_transfer_peripheral_to_mem function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_transfer_mem_to_peripheral-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_transfer_mem_to_peripheral function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_transfer_mem_to_peripheral function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_trigger-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_trigger function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_trigger function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_reset_trigger-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_reset_trigger function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_reset_trigger function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_deinit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_deinit function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_deinit function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma-irq-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      DMA IRQ Functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DMA IRQ Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dma_irq_handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_irq_handler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functionality:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use-Case Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3_1" id="__nav_2_7_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            USB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/usb_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/usb_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_3" id="__nav_2_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_3_1" id="__nav_2_8_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code_style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code style
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_transfer_mem-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_transfer_mem function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_transfer_mem function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_transfer_peripheral_to_mem-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_transfer_peripheral_to_mem function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_transfer_peripheral_to_mem function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_transfer_mem_to_peripheral-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_transfer_mem_to_peripheral function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_transfer_mem_to_peripheral function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_set_trigger-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_set_trigger function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_set_trigger function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_reset_trigger-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_reset_trigger function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_reset_trigger function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma_deinit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_deinit function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dma_deinit function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma-irq-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      DMA IRQ Functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DMA IRQ Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dma_irq_handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      dma_irq_handler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functionality:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use-Case Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dma-api">DMA API</h1>
+<h2 id="api-functionality">API Functionality</h2>
+<p>The API for DMA (Direct Memory Access) functionality includes the following functions:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* DMA driver initialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_init</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_init_opt_t</span><span class="w"> </span><span class="n">dma_init_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA driver initialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_INIT</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_init_opt_t</span><span class="w"> </span><span class="n">dma_init_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA memory-to-memory transfer setup function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_transfer_mem</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">do_software_trigger</span><span class="p">);</span>
+
+<span class="cm">/* DMA memory-to-memory transfer setup function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRANSFER_MEM</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">do_software_trigger</span><span class="p">);</span>
+
+<span class="cm">/* DMA peripheral-to-memory transfer setup function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_transfer_peripheral_to_mem</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA peripheral-to-memory transfer setup function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRANSFER_PERIPHERAL_TO_MEM</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA memory-to-peripheral transfer setup function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_transfer_mem_to_peripheral</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA memory-to-peripheral transfer setup function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRANSFER_MEM_TO_PERIPHERAL</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+
+<span class="cm">/* Function to set extra DMA trigger on a channel (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">set_dma_trigger</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+
+<span class="cm">/* Function to set extra DMA trigger on a channel (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SET_DMA_TRIGGER</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+
+<span class="cm">/* Function to reset DMA trigger from a channel (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">reset_dma_trigger</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+
+<span class="cm">/* Function to reset DMA trigger from a channel (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">RESET_DMA_TRIGGER</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+
+<span class="cm">/* DMA driver deinitialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_deinit</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">);</span>
+
+<span class="cm">/* DMA driver deinitialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_DEINIT</span><span class="p">(</span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="dma_set_transfer_mem-function">dma_set_transfer_mem function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* DMA memory-to-memory transfer setup function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_transfer_mem</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">peripheral</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">do_software_trigger</span><span class="p">);</span>
+
+<span class="cm">/* DMA memory-to-memory transfer setup function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRANSFER_MEM</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">peripheral</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span>
+<span class="w">                                   </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">,</span>
+<span class="w">                                   </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">do_software_trigger</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description">Description:</h3>
+<p>The <code>dma_set_transfer_mem</code> function configures a DMA channel for memory-to-memory data transfer. This function is crucial for efficiently moving data within memory without CPU intervention.</p>
+<h3 id="error-checking">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>DMA_SET_TRANSFER_MEM</strong>: Includes compile-time checks to ensure that the parameters such as <code>peripheral</code>, <code>dma_channel</code>, and <code>dma_options</code> are correctly defined. This check aids in preventing configuration errors.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function when parameters are static and known at compile time.</li>
+</ul>
+</li>
+<li>
+<p><strong>dma_set_transfer_mem</strong>: Performs the same functionality as the uppercase variant but without compile-time parameter checking.</p>
+<ul>
+<li><strong>Usage Note</strong>: Suitable for dynamic scenarios where parameters may change at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters">Parameters:</h3>
+<ol>
+<li><strong>peripheral (dma_peripheral_t)</strong>: The DMA peripheral instance to use.</li>
+<li><strong>dma_channel (dma_channel_t)</strong>: The specific DMA channel to configure for the transfer.</li>
+<li><strong>src (const void*)</strong>: Source memory address for the data transfer.</li>
+<li><strong>dst (void*)</strong>: Destination memory address for the data transfer.</li>
+<li><strong>size (const size_t)</strong>: The number of elements to transfer.</li>
+<li><strong>dma_options (dma_opt_t)</strong>: Platform-specific options, like element size, interrupt triggers, etc.</li>
+<li><strong>do_software_trigger (const uint8_t)</strong>: Specifies whether to immediately trigger the transfer via software.</li>
+</ol>
+<h3 id="return">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates the status of the setup process, with success or failure of the configuration.</li>
+</ul>
+<h3 id="working">Working:</h3>
+<ol>
+<li>Validates the <code>peripheral</code>, <code>dma_channel</code>, and other parameters.</li>
+<li>Configures the DMA channel for a memory-to-memory transfer based on the provided <code>src</code>, <code>dst</code>, <code>size</code>, and <code>dma_options</code>.</li>
+<li>If <code>do_software_trigger</code> is set, triggers the DMA transfer immediately, otherwise, the transfer awaits an external trigger.</li>
+</ol>
+<h2 id="dma_set_transfer_peripheral_to_mem-function">dma_set_transfer_peripheral_to_mem function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* DMA peripheral-to-memory transfer setup function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_transfer_peripheral_to_mem</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">src</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA peripheral-to-memory transfer setup function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRANSFER_PERIPHERAL_TO_MEM</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">src</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_1">Description:</h3>
+<p>The <code>dma_set_transfer_peripheral_to_mem</code> function configures a DMA channel to transfer data from a hardware peripheral to a memory location. This setup is commonly used to receive data from peripherals like ADCs or UARTs efficiently, minimizing CPU load.</p>
+<h3 id="error-checking_1">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>DMA_SET_TRANSFER_PERIPHERAL_TO_MEM</strong>: This uppercase variant includes compile-time parameter checking to validate the DMA peripheral and channel, as well as the source and destination addresses.</p>
+<ul>
+<li><strong>Usage Note</strong>: Ideal for use cases where DMA channel and peripheral configurations are known at compile time.</li>
+</ul>
+</li>
+<li>
+<p><strong>dma_set_transfer_peripheral_to_mem</strong>: Performs the same function without compile-time checks.</p>
+<ul>
+<li><strong>Usage Note</strong>: Suitable for dynamic scenarios where DMA parameters are determined at runtime or need flexibility.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_1">Parameters:</h3>
+<ol>
+<li><strong>dma_peripheral (dma_peripheral_t)</strong>: The DMA peripheral instance to configure.</li>
+<li><strong>dma_channel (dma_channel_t)</strong>: The designated DMA channel for the operation.</li>
+<li><strong>src (dma_peripheral_location_t)</strong>: The hardware peripheral address serving as the data source.</li>
+<li><strong>dst (void*)</strong>: The memory location where the data will be stored.</li>
+<li><strong>size (const size_t)</strong>: Number of elements to be transferred.</li>
+<li><strong>dma_options (dma_opt_t)</strong>: Options for transfer configuration, such as element size and interrupt settings.</li>
+</ol>
+<h3 id="return_1">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates whether the DMA channel configuration was successful or encountered errors.</li>
+</ul>
+<h3 id="working_1">Working:</h3>
+<ol>
+<li>Checks the compatibility and correctness of the given parameters.</li>
+<li>Sets up the DMA channel to link the specified source peripheral to the destination memory address.</li>
+<li>Implements the provided <code>dma_options</code> for the transfer, adjusting settings like element size and interrupt behavior.</li>
+<li>Prepares the DMA channel for operation, ready to move data upon the specified trigger or software initiation.</li>
+</ol>
+<h2 id="dma_set_transfer_mem_to_peripheral-function">dma_set_transfer_mem_to_peripheral function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* DMA memory-to-peripheral transfer setup function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_transfer_mem_to_peripheral</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+
+<span class="cm">/* DMA memory-to-peripheral transfer setup function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRANSFER_MEM_TO_PERIPHERAL</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_location_t</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>
+<span class="w">                                                 </span><span class="k">const</span><span class="w"> </span><span class="n">dma_opt_t</span><span class="w"> </span><span class="n">dma_options</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_2">Description:</h3>
+<p>The <code>dma_set_transfer_mem_to_peripheral</code> function configures a DMA channel for transferring data from a memory location to a hardware peripheral. This setup is commonly used for sending data to peripherals like SPI or UART without CPU intervention.</p>
+<h3 id="error-checking_2">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>DMA_SET_TRANSFER_MEM_TO_PERIPHERAL</strong>: Implements compile-time checks for parameters such as <code>dma_peripheral</code> and <code>dma_channel</code>, ensuring that the configuration is valid and safe.</p>
+<ul>
+<li><strong>Usage Note</strong>: Recommended when the DMA setup parameters are known and constant at compile time.</li>
+</ul>
+</li>
+<li>
+<p><strong>dma_set_transfer_mem_to_peripheral</strong>: Provides identical functionality without compile-time parameter verification.</p>
+<ul>
+<li><strong>Usage Note</strong>: Suitable for scenarios where DMA parameters may be determined or modified at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_2">Parameters:</h3>
+<ol>
+<li><strong>dma_peripheral (dma_peripheral_t)</strong>: The specific DMA peripheral instance to use.</li>
+<li><strong>dma_channel (dma_channel_t)</strong>: The designated DMA channel for the operation.</li>
+<li><strong>src (const void*)</strong>: Source memory address for the data.</li>
+<li><strong>dst (dma_peripheral_location_t)</strong>: Destination peripheral to receive the data.</li>
+<li><strong>size (const size_t)</strong>: Number of elements to transfer.</li>
+<li><strong>dma_options (dma_opt_t)</strong>: Configuration options like element size, interrupt behavior, etc.</li>
+</ol>
+<h3 id="return_2">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates the success or failure of the DMA channel configuration.</li>
+</ul>
+<h3 id="working_2">Working:</h3>
+<ol>
+<li>Validates provided parameters for compatibility and correctness.</li>
+<li>Configures the DMA channel, specifying the source memory address and destination peripheral.</li>
+<li>Applies specified <code>dma_options</code> for the transfer, such as element size and interrupt generation.</li>
+<li>Enables the DMA channel for the transfer, readying it to move data upon trigger or software initiation.</li>
+</ol>
+<h2 id="dma_set_trigger-function">dma_set_trigger function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* DMA trigger setting function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_set_trigger</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+
+<span class="cm">/* DMA trigger setting function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_SET_TRIGGER</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_3">Description:</h3>
+<p>The <code>dma_set_trigger</code> function configures a trigger for a specific DMA channel. This trigger, typically an event or a peripheral action, initiates the data transfer process managed by the DMA controller.</p>
+<h3 id="error-checking_3">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>DMA_SET_TRIGGER</strong>: The uppercase version of the function checks the validity of the DMA peripheral, channel, and trigger at compile time. This ensures that the parameters align with the device's capabilities and specifications.</p>
+<ul>
+<li><strong>Usage Note</strong>: Recommended when the DMA configuration is determined at compile time, providing an additional layer of validation.</li>
+</ul>
+</li>
+<li>
+<p><strong>dma_set_trigger</strong>: Functions identically but without compile-time checks.</p>
+<ul>
+<li><strong>Usage Note</strong>: Suitable for applications where DMA configurations are dynamic or not known beforehand.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_3">Parameters:</h3>
+<ol>
+<li><strong>dma_peripheral (dma_peripheral_t)</strong>: Identifies the DMA peripheral to be configured.</li>
+<li><strong>dma_channel (dma_channel_t)</strong>: Specifies the DMA channel to set the trigger for.</li>
+<li><strong>trigger (dma_trigger_t)</strong>: Defines the trigger condition that initiates the DMA transfer.</li>
+</ol>
+<h3 id="return_3">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Represents the success or failure of the function. A status of <code>UHAL_STATUS_OK</code> indicates successful configuration.</li>
+</ul>
+<h3 id="working_3">Working:</h3>
+<ol>
+<li>Validates the specified DMA peripheral and channel, ensuring compatibility and availability.</li>
+<li>Configures the DMA channel with the provided trigger condition.</li>
+<li>Enables the DMA controller to respond to the trigger, allowing automated data transfer when the trigger event occurs.</li>
+</ol>
+<h2 id="dma_reset_trigger-function">dma_reset_trigger function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Function to remove an existing DMA trigger from a given channel (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_reset_trigger</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+
+<span class="cm">/* Function to remove an existing DMA trigger from a given channel (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_RESET_TRIGGER</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">dma_channel_t</span><span class="w"> </span><span class="n">dma_channel</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">dma_trigger_t</span><span class="w"> </span><span class="n">trigger</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_4">Description:</h3>
+<p>The <code>dma_reset_trigger</code> function is used to remove a previously set trigger from a specific DMA channel. Triggers in DMA are used to start transfers based on certain events or conditions. Removing a trigger stops these automatic initiations.</p>
+<h3 id="error-checking_4">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>DMA_RESET_TRIGGER</strong>: In this uppercase version, compile-time parameter checking is performed to validate the DMA peripheral, channel, and trigger parameters. This ensures compatibility and correctness of the configuration.</p>
+<ul>
+<li><strong>Usage Note</strong>: Best used when DMA settings are known at compile time, providing extra reliability in the configuration.</li>
+</ul>
+</li>
+<li>
+<p><strong>dma_reset_trigger</strong>: This version operates identically but without compile-time checks.</p>
+<ul>
+<li><strong>Usage Note</strong>: Ideal for scenarios where DMA configurations may change dynamically or are determined at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_4">Parameters:</h3>
+<ol>
+<li><strong>dma_peripheral (dma_peripheral_t)</strong>: Specifies the DMA peripheral associated with the trigger.</li>
+<li><strong>dma_channel (dma_channel_t)</strong>: Identifies the DMA channel from which the trigger is to be removed.</li>
+<li><strong>trigger (dma_trigger_t)</strong>: The specific trigger condition to be removed.</li>
+</ol>
+<h3 id="return_4">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates the success or failure of the operation. A return value of <code>UHAL_STATUS_OK</code> means the trigger was successfully removed.</li>
+</ul>
+<h3 id="working_4">Working:</h3>
+<ol>
+<li>The function first checks the validity of the given DMA peripheral and channel.</li>
+<li>It then proceeds to remove the specified trigger from the DMA channel.</li>
+<li>This removal disables the previously configured automatic initiation of data transfer for the given condition, reverting the channel to manual or other trigger-based operations.</li>
+</ol>
+<h2 id="dma_deinit-function">dma_deinit function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* DMA driver deinitialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">dma_deinit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">);</span>
+
+<span class="cm">/* DMA driver deinitialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">DMA_DEINIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dma_peripheral_t</span><span class="w"> </span><span class="n">dma_peripheral</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_5">Description:</h3>
+<p>The <code>dma_deinit</code> and <code>DMA_DEINIT</code> functions are designed to deinitialize a specified DMA peripheral. Deinitialization is essential when a DMA peripheral is no longer needed, ensuring that resources are properly released and can be reallocated if necessary.</p>
+<h3 id="error-checking_5">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>DMA_DEINIT</strong>: This uppercase version includes compile-time parameter checking. It validates the <code>dma_peripheral</code> to ensure it corresponds to a correctly initialized and existing DMA peripheral. This check prevents errors related to deinitializing an invalid or non-existent peripheral.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function when the DMA peripheral number is known at compile time, offering a more robust and error-proof deinitialization.</li>
+</ul>
+</li>
+<li>
+<p><strong>dma_deinit</strong>: Performs the deinitialization process without compile-time checks, offering flexibility for scenarios where the DMA peripheral may be dynamically assigned or changed during operation.</p>
+<ul>
+<li><strong>Usage Note</strong>: Suitable for dynamic systems where the DMA peripheral might not be predetermined or varies based on runtime conditions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_5">Parameters:</h3>
+<ol>
+<li><strong>dma_peripheral (dma_peripheral_t)</strong>: The specific DMA peripheral instance to deinitialize.</li>
+</ol>
+<h3 id="return_5">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates the success or failure of the deinitialization process. A return value of <code>UHAL_STATUS_OK</code> means the peripheral was successfully deinitialized.</li>
+</ul>
+<h3 id="working_5">Working:</h3>
+<ol>
+<li>The function validates the specified DMA peripheral.</li>
+<li>It then proceeds to reset and release any resources or configurations associated with the DMA peripheral.</li>
+<li>This process ensures that the DMA peripheral is turned off and is no longer consuming system resources, making it available for other tasks or reinitialization in the future.</li>
+</ol>
+<h2 id="dma-irq-functionality">DMA IRQ Functionality</h2>
+<p>The DMA (Direct Memory Access) driver provides an essential Interrupt Request (IRQ) handler to manage various DMA events. This handler plays a critical role in responding to and managing the operations associated with DMA transactions.</p>
+<h3 id="dma_irq_handler">dma_irq_handler</h3>
+<p>This IRQ is triggered to handle events related to DMA operations.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">dma_irq_handler</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">hw</span><span class="p">)</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">weak</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="functionality">Functionality:</h3>
+<ul>
+<li><strong>dma_irq_handler</strong>: This default ISR (Interrupt Service Routine) for the DMA peripheral is invoked in response to events such as the completion of a data transfer, an error during an operation, or other DMA-specific triggers. By default, it is marked as a weak symbol, allowing developers to override it with their own implementation for more specialized handling of DMA events.</li>
+</ul>
+<h3 id="use-case-example">Use-Case Example:</h3>
+<p>Consider a scenario where you're developing an embedded system that requires high-speed data transfer between different memory locations, or between memory and a hardware peripheral, without CPU intervention.</p>
+<ol>
+<li>
+<p><strong>Setting Up DMA</strong>: You configure DMA channels to transfer data from a sensor (as a peripheral) to a memory buffer.</p>
+</li>
+<li>
+<p><strong>Data Transfer Completion</strong>: Once the data transfer is complete, the <code>dma_irq_handler</code> is automatically invoked. Here, you can check if the transfer was successful or if any errors occurred.</p>
+</li>
+<li>
+<p><strong>Handling DMA Events</strong>: Inside your custom <code>dma_irq_handler</code>, you can implement code to process the data, initiate another transfer, or handle errors.</p>
+</li>
+<li>
+<p><strong>Continuous Operation</strong>: For continuous data acquisition systems, the IRQ handler can be used to reset the DMA channel for the next data transfer, ensuring seamless data flow.</p>
+</li>
+</ol>
+<p>By customizing the <code>dma_irq_handler</code>, you can efficiently manage DMA operations tailored to the specific needs of your application, enhancing performance and reliability.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../../../javascript/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

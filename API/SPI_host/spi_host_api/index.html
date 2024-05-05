@@ -1,0 +1,4012 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../spi_host_compatibility/">
+      
+      
+        <link rel="next" href="../platform/atmelsam/About/">
+      
+      
+      <link rel="icon" href="../../../assets/Universal_hal_logo_top_bar.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>General API - Universal_hal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spi-host-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Universal_hal" class="md-header__button md-logo" aria-label="Universal_hal" data-md-component="logo">
+      
+  <img src="../../../assets/Universal_hal_logo_top_bar.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Universal_hal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Universal_hal" class="md-nav__button md-logo" aria-label="Universal_hal" data-md-component="logo">
+      
+  <img src="../../../assets/Universal_hal_logo_top_bar.svg" alt="logo">
+
+    </a>
+    Universal_hal
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GPIO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GPIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/gpio_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/gpio_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3_1" id="__nav_2_1_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/platform/atmelsam/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    I2C Host
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            I2C Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/i2c_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/i2c_host_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1_4" id="__nav_2_2_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Doxygen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Doxygen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struct List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struct Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/macros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Macros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    I2C Slave
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            I2C Slave
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/i2c_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/i2c_slave_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3_1" id="__nav_2_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SPI Host
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            SPI Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spi_host_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      API functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_init-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_init function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_init function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_deinit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_deinit function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_deinit function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_start_transaction-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_start_transaction function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_start_transaction function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_end_transaction-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_end_transaction function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_end_transaction function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_write_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_write_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_write_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_write_non_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_write_non_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_write_non_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_read_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_read_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_read_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_read_non_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_read_non_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_read_non_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi-host-irq-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPI Host IRQ Functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SPI Host IRQ Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-receive-irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Receive IRQ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-send-irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data Send IRQ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use-Case Example:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Note:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1" id="__nav_2_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SPI Slave
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            SPI Slave
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/spi_slave_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/spi_slave_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3_1" id="__nav_2_5_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UART
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            UART
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/uart_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/uart_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3_1" id="__nav_2_6_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DMA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            DMA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/dma_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/dma_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3_1" id="__nav_2_7_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            USB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/usb_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/usb_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_3" id="__nav_2_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_3_1" id="__nav_2_8_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USB/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code_style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code style
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      API functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_init-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_init function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_init function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_deinit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_deinit function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_deinit function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_start_transaction-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_start_transaction function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_start_transaction function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_end_transaction-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_end_transaction function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_end_transaction function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_write_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_write_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_write_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_write_non_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_write_non_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_write_non_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_read_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_read_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_read_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi_host_read_non_blocking-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      spi_host_read_non_blocking function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spi_host_read_non_blocking function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spi-host-irq-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPI Host IRQ Functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SPI Host IRQ Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-receive-irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Receive IRQ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-send-irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data Send IRQ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use-Case Example:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Note:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="spi-host-api">SPI host API</h1>
+<h2 id="api-functionality">API functionality</h2>
+<p>The API for SPI host functionality has the following functions available:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver initialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source</span><span class="p">,</span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source_freq</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">spi_bus_frequency</span><span class="p">,</span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">spi_bus_opt_t</span><span class="w"> </span><span class="n">spi_extra_configuration_opt</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver initialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_INIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source_freq</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">spi_bus_frequency</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">spi_bus_opt_t</span><span class="w"> </span><span class="n">spi_extra_configuration_opt</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver deinitialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_deinit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver deinitialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_DEINIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver start transaction function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_start_transaction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">spi_extra_dev_opt_t</span><span class="w"> </span><span class="n">device_specific_config_opt</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver start transaction function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_START_TRANSACTION</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">spi_extra_dev_opt_t</span><span class="w"> </span><span class="n">device_specific_config_opt</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver end transaction function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_end_transaction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver end transaction function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_END_TRANSACTION</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver write blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_write_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver write blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_WRITE_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver write non-blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_write_non_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver write non-blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_WRITE_NON_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver read blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_read_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver read blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_READ_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver read non-blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_read_non_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver read non-blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_READ_NON_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="spi_host_init-function">spi_host_init function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver initialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source</span><span class="p">,</span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source_freq</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">spi_bus_frequency</span><span class="p">,</span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">spi_bus_opt_t</span><span class="w"> </span><span class="n">spi_extra_configuration_opt</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver initialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_INIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">spi_clock_source_freq</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">spi_bus_frequency</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">spi_bus_opt_t</span><span class="w"> </span><span class="n">spi_extra_configuration_opt</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description">Description:</h3>
+<p>The <code>spi_host_init</code> and <code>SPI_HOST_INIT</code> functions are designed to initialize an SPI peripheral with specific configurations.</p>
+<h3 id="error-checking">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_INIT</strong>: Written in uppercase letters, this version of the function includes compile-time parameter checking to ensure the validity of the provided parameters. The parameters such as <code>spi_peripheral_num</code> and <code>spi_clock_source</code> are checked against valid definitions at compile time. This safeguard helps detect configuration errors early in the development phase.</p>
+<ul>
+<li><strong>Usage Note</strong>: Utilize this function only when the parameters are known at compile time.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_init</strong>: This function provides the same SPI initialization capabilities but without the compile-time parameter check. </p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function when dealing with parameters that might be determined at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: The specific SPI peripheral instance to initialize.</li>
+<li><strong>spi_clock_source (const uint32_t)</strong>: The clock source that will be used for configuring the SPI peripheral.</li>
+<li><strong>spi_clock_source_freq (const uint32_t)</strong>: The frequency of the clock source in Hertz.</li>
+<li><strong>spi_bus_frequency (const unsigned long)</strong>: The desired frequency/baud rate for SPI communication.</li>
+<li><strong>spi_extra_configuration_opt (const spi_bus_opt_t)</strong>: Extra configuration options for customizing the SPI host driver.</li>
+</ol>
+<h3 id="return">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: The function will return a status indicating the success or failure of the initialization process. The exact definitions of possible return values should be referenced in the "error_checking.h" header file.</li>
+</ul>
+<h3 id="working">Working:</h3>
+<ol>
+<li>The function begins by validating the provided parameters to ensure they're within acceptable ranges.</li>
+<li>It configures the clock source for the SPI peripheral based on the <code>spi_clock_source</code> parameter.</li>
+<li>The function sets the clock source frequency and SPI bus frequency as specified.</li>
+<li>Any additional configurations specified in <code>spi_extra_configuration_opt</code> are applied.</li>
+<li>Finally, the function activates the SPI peripheral, making it ready for communication transactions.</li>
+</ol>
+<h2 id="spi_host_deinit-function">spi_host_deinit function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver deinitialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_deinit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver deinitialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_DEINIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_1">Description:</h3>
+<p>The <code>spi_host_deinit</code> and <code>SPI_HOST_DEINIT</code> functions are responsible for deinitializing a previously initialized SPI peripheral.</p>
+<h3 id="error-checking_1">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_DEINIT</strong>: This uppercase version includes compile-time parameter checking for the peripheral number.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function when the peripheral number is known at compile time, as it provides an additional layer of safety by ensuring that the provided parameter is valid.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_deinit</strong>: This function performs the deinitialization without compile-time parameter checks.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function when the peripheral number might be determined at runtime or when compile-time checks are not necessary.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_1">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: The specific SPI peripheral instance to deinitialize.</li>
+</ol>
+<h3 id="return_1">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates the success or failure status of the deinitialization process. This can be used to verify whether the peripheral was successfully turned off and its resources were released.</li>
+</ul>
+<h3 id="working_1">Working:</h3>
+<ol>
+<li>The function first validates the provided SPI peripheral number to ensure it refers to a valid and previously initialized peripheral.</li>
+<li>It then proceeds to reset any specific settings and configurations that were applied to the SPI peripheral during initialization.</li>
+<li>Finally, the function turns off the SPI peripheral, effectively releasing its resources and making it unavailable for further communication until reinitialized.</li>
+</ol>
+<h2 id="spi_host_start_transaction-function">spi_host_start_transaction function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver start transaction function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_start_transaction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">spi_extra_dev_opt_t</span><span class="w"> </span><span class="n">device_specific_config_opt</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver start transaction function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_START_TRANSACTION</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">spi_extra_dev_opt_t</span><span class="w"> </span><span class="n">device_specific_config_opt</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_2">Description:</h3>
+<p>The <code>spi_host_start_transaction</code> and <code>SPI_HOST_START_TRANSACTION</code> functions are designed to initiate a transaction with an SPI peripheral. This involves setting up the specified SPI device and preparing it for either a read or write operation.</p>
+<h3 id="error-checking_2">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_START_TRANSACTION</strong>: This uppercase version of the function includes compile-time parameter checking. It verifies the correctness of the provided parameters, ensuring they are valid for the intended SPI transaction.</p>
+<ul>
+<li><strong>Usage Note</strong>: This function should be used when parameters are known and can be validated at compile time, offering a safer and more reliable setup.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_start_transaction</strong>: This version performs the transaction setup without compile-time parameter checks. It offers more flexibility for dynamically determined parameters.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function in scenarios where the parameters are not fixed and could be subject to change at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_2">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: Identifies the specific SPI peripheral instance to be used for the transaction.</li>
+<li><strong>chip_select_pin (const gpio_pin_t)</strong>: Specifies the GPIO pin used for the chip select (CS) line, which is used to activate the SPI peripheral for the transaction.</li>
+<li><strong>device_specific_config_opt (const spi_extra_dev_opt_t)</strong>: Additional device-specific configuration options that may be necessary for certain SPI devices or specific transaction requirements.</li>
+</ol>
+<h3 id="return_2">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: The function returns a status indicating the success or failure of initiating the SPI transaction. A successful return value implies that the SPI device is ready and properly configured for the subsequent operation.</li>
+</ul>
+<h3 id="working_2">Working:</h3>
+<ol>
+<li>The function first validates the provided SPI peripheral number and the chip select pin to ensure they correspond to a valid and correctly configured SPI device.</li>
+<li>It then applies any device-specific configuration options provided, which might include settings like SPI mode, bit order, or speed adjustments.</li>
+<li>Once the setup is complete, the function activates the chip select line, signaling the SPI device that it is about to participate in a transaction.</li>
+<li>Finally, the SPI peripheral is now ready for a data read or write operation, and the function returns a status indicating the readiness of the device.</li>
+</ol>
+<h2 id="spi_host_end_transaction-function">spi_host_end_transaction function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver end transaction function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_end_transaction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver end transaction function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_END_TRANSACTION</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                       </span><span class="k">const</span><span class="w"> </span><span class="n">gpio_pin_t</span><span class="w"> </span><span class="n">chip_select_pin</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_3">Description:</h3>
+<p>The <code>spi_host_end_transaction</code> and <code>SPI_HOST_END_TRANSACTION</code> functions are used to conclude a transaction with an SPI peripheral. This typically involves deactivating the chip select line and ensuring the SPI peripheral is properly reset or left in a state ready for the next transaction.</p>
+<h3 id="error-checking_3">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_END_TRANSACTION</strong>: This uppercase version includes compile-time parameter checking, ensuring the validity and correctness of the SPI peripheral number and the chip select pin.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function for scenarios where parameters are predetermined and require validation at compile time, as it provides an added layer of safety and error checking.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_end_transaction</strong>: This function operates without compile-time checks, offering more flexibility in scenarios where parameters are dynamically determined or may change at runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Ideal for situations where the parameters are not known beforehand or are subject to variation during the program's execution.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_3">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: Specifies the SPI peripheral instance involved in the transaction.</li>
+<li><strong>chip_select_pin (const gpio_pin_t)</strong>: The GPIO pin used for the chip select (CS) line, which needs to be deactivated to signal the end of the transaction.</li>
+</ol>
+<h3 id="return_3">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Indicates the success or failure of ending the SPI transaction. A successful return implies that the transaction has been properly concluded, and the SPI device is either reset or ready for the next operation.</li>
+</ul>
+<h3 id="working_3">Working:</h3>
+<ol>
+<li>The function starts by validating the SPI peripheral number and the chip select pin, ensuring they are correct and have been used in the ongoing transaction.</li>
+<li>It then proceeds to deactivate the chip select line, signaling to the SPI peripheral that the transaction is complete.</li>
+<li>Any necessary cleanup or reconfiguration steps are performed to ensure the SPI peripheral is left in a consistent and ready state.</li>
+<li>Finally, the function returns a status indicating whether the transaction was successfully concluded.</li>
+</ol>
+<h2 id="spi_host_write_blocking-function">spi_host_write_blocking function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver write blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_write_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver write blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_WRITE_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_4">Description:</h3>
+<p>The <code>spi_host_write_blocking</code> and <code>SPI_HOST_WRITE_BLOCKING</code> functions handle the transmission of data over SPI in a blocking manner, meaning the function will wait until all data is transmitted before returning control.</p>
+<h3 id="error-checking_4">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_WRITE_BLOCKING</strong>: This uppercase version includes compile-time parameter checking, ensuring that the provided parameters are correct before the function is executed.</p>
+<ul>
+<li><strong>Usage Note</strong>: This function is ideal when parameters are known at compile time and additional safety checks are desired.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_write_blocking</strong>: Performs the data transmission without compile-time checks, allowing for greater flexibility with runtime-determined parameters.</p>
+<ul>
+<li><strong>Usage Note</strong>: This function is suitable when parameters are dynamic or determined at runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_4">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: The specific SPI peripheral instance to use for data transmission.</li>
+<li><strong>write_buff (const unsigned char*)</strong>: Pointer to the buffer containing the data to be written.</li>
+<li><strong>size (const size_t)</strong>: The number of bytes to write from the buffer.</li>
+</ol>
+<h3 id="return_4">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: This return type indicates the success or failure status of the write operation. A successful return means all data was transmitted correctly.</li>
+</ul>
+<h3 id="working_4">Working:</h3>
+<ol>
+<li>The function first validates the parameters and prepares the SPI peripheral for data transmission.</li>
+<li>It then sends the data byte-by-byte from the provided buffer to the SPI peripheral. During this process, the function blocks any further execution until the entire buffer is transmitted.</li>
+<li>After all data is sent, the function returns, indicating whether the transmission was successful.</li>
+</ol>
+<h2 id="spi_host_write_non_blocking-function">spi_host_write_non_blocking function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver write non-blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_write_non_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver write non-blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_WRITE_NON_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">write_buff</span><span class="p">,</span>
+<span class="w">                                          </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_5">Description:</h3>
+<p>The <code>spi_host_write_non_blocking</code> and <code>SPI_HOST_WRITE_NON_BLOCKING</code> functions are used to transmit data over SPI in a non-blocking manner. This means the function initiates the transmission and returns control immediately without waiting for the entire data transfer to complete.</p>
+<h3 id="error-checking_5">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_WRITE_NON_BLOCKING</strong>: This uppercase version includes compile-time parameter checking, which ensures that parameters passed to the function are valid and correct as per the expected types and values.</p>
+<ul>
+<li><strong>Usage Note</strong>: This version is particularly useful when parameters are known at compile time and when it's critical to ensure their correctness before execution.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_write_non_blocking</strong>: Offers the same functionality as its uppercase counterpart but does not include compile-time parameter checking. This version is more flexible for situations where parameters may be determined at runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Ideal for use cases where parameters are not known beforehand or may change dynamically.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_5">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: Specifies the SPI peripheral instance to be used for the transmission.</li>
+<li><strong>write_buff (const unsigned char*)</strong>: A pointer to the buffer containing the data that needs to be transmitted.</li>
+<li><strong>size (const size_t)</strong>: The number of bytes to transmit from the buffer.</li>
+</ol>
+<h3 id="return_5">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: The return status indicates whether the transmission was successfully initiated. A successful return means the data transmission process has begun.</li>
+</ul>
+<h3 id="working_5">Working:</h3>
+<ol>
+<li>The function first checks the readiness of the SPI peripheral for data transmission.</li>
+<li>It then initiates the transmission of data from the provided buffer. This process is non-blocking, meaning the function does not wait for the complete transmission of all bytes.</li>
+<li>After initiating the transmission, the function quickly returns control to the calling program, allowing other operations to proceed while the SPI peripheral continues to transmit data in the background.</li>
+</ol>
+<h2 id="spi_host_read_blocking-function">spi_host_read_blocking function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver read blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_read_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver read blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_READ_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span>
+<span class="w">                                     </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_6">Description:</h3>
+<p>The <code>spi_host_read_blocking</code> and <code>SPI_HOST_READ_BLOCKING</code> functions are used for receiving data over SPI in a blocking manner. In this mode, the function will wait until the specified amount of data is received before returning.</p>
+<h3 id="error-checking_6">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_READ_BLOCKING</strong>: This uppercase version includes compile-time parameter checking. It validates that the parameters provided are correct according to their expected types and values, enhancing safety and reducing runtime errors.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function when parameters are known at compile time and need validation for correctness.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_read_blocking</strong>: Performs the read operation without compile-time checks. This version is more adaptable to situations where parameters may be determined dynamically at runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this version in scenarios where parameters are not fixed at compile time or when they are subject to change.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_6">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: Identifies the specific SPI peripheral instance to use for reading data.</li>
+<li><strong>read_buff (unsigned char*)</strong>: A pointer to the buffer where the received data will be stored.</li>
+<li><strong>amount_of_bytes (size_t)</strong>: The number of bytes to read into the buffer.</li>
+</ol>
+<h3 id="return_6">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: The return status indicates the success or failure of the read operation. A successful return means that the requested amount of data has been received and stored in the provided buffer.</li>
+</ul>
+<h3 id="working_6">Working:</h3>
+<ol>
+<li>The function first validates the readiness of the SPI peripheral for data reception.</li>
+<li>It then begins reading data byte-by-byte from the SPI peripheral. This process is blocking, meaning the function will not return until the entire amount of data specified has been received.</li>
+<li>After the complete reception of data, the function returns, indicating whether the read operation was successful.</li>
+</ol>
+<h2 id="spi_host_read_non_blocking-function">spi_host_read_non_blocking function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* SPI driver read non-blocking function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">spi_host_read_non_blocking</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                         </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span>
+<span class="w">                                         </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+
+<span class="cm">/* SPI driver read non-blocking function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">SPI_HOST_READ_NON_BLOCKING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">spi_host_inst_t</span><span class="w"> </span><span class="n">spi_peripheral_num</span><span class="p">,</span>
+<span class="w">                                         </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">read_buff</span><span class="p">,</span>
+<span class="w">                                         </span><span class="kt">size_t</span><span class="w"> </span><span class="n">amount_of_bytes</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_7">Description:</h3>
+<p>The <code>spi_host_read_non_blocking</code> and <code>SPI_HOST_READ_NON_BLOCKING</code> functions facilitate the reception of data over SPI in a non-blocking manner. This approach means the function initiates the read operation and returns control immediately, without waiting for the entire data reception to complete.</p>
+<h3 id="error-checking_7">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>SPI_HOST_READ_NON_BLOCKING</strong>: This uppercase version includes compile-time parameter checking, ensuring the correctness and validity of the provided parameters. This additional check is beneficial for ensuring parameter integrity when they are known at compile time.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function for scenarios where the parameters are predetermined and where compile-time validation adds an extra layer of safety.</li>
+</ul>
+</li>
+<li>
+<p><strong>spi_host_read_non_blocking</strong>: Offers the same functionality but without compile-time parameter checks, providing greater flexibility in cases where parameters might be determined at runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: This version is suitable for dynamic situations where parameters may vary or are not known in advance.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_7">Parameters:</h3>
+<ol>
+<li><strong>spi_peripheral_num (const spi_host_inst_t)</strong>: Specifies which SPI peripheral instance to use for the read operation.</li>
+<li><strong>read_buff (unsigned char*)</strong>: Points to the buffer that will store the received data.</li>
+<li><strong>amount_of_bytes (size_t)</strong>: Defines the number of bytes to be read into the buffer.</li>
+</ol>
+<h3 id="return_7">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: This return type signifies the success or initiation of the read operation. A successful return implies that the data reception process has started.</li>
+</ul>
+<h3 id="working_7">Working:</h3>
+<ol>
+<li>The function begins by ensuring that the SPI peripheral is ready for data reception.</li>
+<li>It then initiates the read operation, which is designed to be non-blocking. The function does not wait for the full completion of data reception; instead, it starts the process and then returns control to the calling program immediately.</li>
+<li>The function exits quickly after starting the data reception, allowing other operations to proceed concurrently while the SPI peripheral continues to receive data in the background.</li>
+</ol>
+<h2 id="spi-host-irq-functionality">SPI Host IRQ Functionality</h2>
+<p>The SPI Host driver as part of the Universal HAL includes specific Interrupt Request (IRQ) handlers for managing SPI communication. These handlers are triggered in response to specific actions during SPI transactions. They are declared as weak symbols, allowing for the possibility of overriding them with custom implementations.</p>
+<h3 id="1-data-receive-irq">1. Data Receive IRQ</h3>
+<p>Activated when a read action is executed by the SPI host. This IRQ handler is essential for processing data received from an SPI slave device.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">spi_host_data_recv_irq</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">hw</span><span class="p">,</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="n">bustransaction_t</span><span class="w"> </span><span class="o">*</span><span class="n">transaction</span><span class="p">)</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">weak</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="2-data-send-irq">2. Data Send IRQ</h3>
+<p>Triggered when a write action is performed by the SPI host. This IRQ handler is crucial for managing data transmission to an SPI slave device.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">spi_host_data_send_irq</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">hw</span><span class="p">,</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="n">bustransaction_t</span><span class="w"> </span><span class="o">*</span><span class="n">transaction</span><span class="p">)</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">weak</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="use-case-example">Use-Case Example:</h3>
+<p>Consider a scenario where an SPI host (like a microcontroller) is communicating with an SPI slave device (such as a memory chip or sensor).</p>
+<ol>
+<li>
+<p><strong>Data Read Operation</strong>: When the SPI host initiates a read operation to receive data from the slave device, the <code>spi_host_data_recv_irq</code> is invoked. This handler can be customized to process and handle the incoming data according to the specific requirements of your application.</p>
+</li>
+<li>
+<p><strong>Data Write Operation</strong>: Conversely, when the SPI host sends data to the slave device, the <code>spi_host_data_send_irq</code> gets triggered. Customizing this handler allows you to control the data transmission process, ensuring that data is sent correctly and efficiently.</p>
+</li>
+</ol>
+<p>By defining custom implementations for these IRQ handlers, developers can tailor the SPI host's response to read and write operations, allowing for more precise control over data handling and communication flow. This level of customization is particularly beneficial in complex systems where standard IRQ behavior may not suffice.</p>
+<h3 id="important-note">Important Note:</h3>
+<ul>
+<li>Customizing these IRQ handlers can potentially affect the functionality of the standard <code>spi_host_write</code> and <code>spi_host_read</code> functions provided by the Universal HAL. It's important to ensure that any custom implementation is compatible with the overall SPI communication process and does not inadvertently disrupt standard operations.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../../../javascript/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

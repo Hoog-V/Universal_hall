@@ -1,0 +1,59 @@
+**Use this as a template:**
+
+## i2c_host_init function
+
+```c
+/* I2C driver initialization function (without compile-time parameter checking)*/
+uhal_status_t i2c_host_init(const i2c_periph_inst_t i2c_peripheral_num, 
+                            const i2c_clock_sources_t clock_sources,
+                            const uint32_t periph_clk_freq, 
+                            const uint32_t baud_rate_freq,
+                            const i2c_extra_opt_t extra_configuration_options);
+
+/* I2C driver initialization function (with compile-time parameter checking)   */
+uhal_status_t I2C_HOST_INIT(const i2c_periph_inst_t i2c_peripheral_num, 
+                            const i2c_clock_sources_t clock_sources, 
+                            const uint32_t periph_clk_freq, 
+                            const uint32_t baud_rate_freq, 
+                            const i2c_extra_opt_t extra_configuration_options);
+```
+
+### Description:
+
+The `i2c_host_init` and `I2C_HOST_INIT` functions are designed to initialize an I2C peripheral with specific configurations.
+
+### Error Checking:
+
+- **I2C_HOST_INIT**: Written in uppercase letters, this version of the function includes compile-time parameter checking to ensure the validity of the provided parameters. The parameters such as `i2c_peripheral_num` and `clock_sources` are checked against valid definitions at compile time. This safeguard helps detect configuration errors early in the development phase.
+  
+	- **Usage Note**: Utilize this function only when the parameters are known at compile time.
+
+- **i2c_host_init**: This function provides the same I2C initialization capabilities but without the compile-time parameter check. 
+  
+	- **Usage Note**: Opt for this function when dealing with parameters that might be determined at runtime.
+
+### Parameters:
+
+1. **i2c_peripheral_num (const i2c_periph_inst_t)**: The specific I2C peripheral instance to initialize.
+2. **clock_sources (const i2c_clock_sources_t)**: The clock source that will be used for the I2C peripheral.
+3. **periph_clk_freq (const uint32_t)**: The frequency of the peripheral clock in Hertz.
+4. **baud_rate_freq (const uint32_t)**: The desired baud rate frequency in Hertz for I2C communication.
+5. **extra_configuration_options (const i2c_extra_opt_t)**: Additional configuration options to further customize the I2C peripheral behavior.
+
+### Return:
+
+- **uhal_status_t**: The function will return a status indicating the success or failure of the initialization process. The exact definitions of possible return values should be referenced in the "error_checking.h" header file.
+
+### Working:
+
+1. The function starts by validating the provided parameters, ensuring they're within acceptable ranges.
+2. It then configures the clock source for the I2C peripheral based on the `clock_sources` parameter.
+3. The function sets the peripheral clock frequency and baud rate as specified.
+4. Any additional configurations specified in `extra_configuration_options` are applied.
+5. Finally, the function activates the I2C peripheral, making it ready for communication.
+
+**Rewrite this to describe the following function prototype, also include the error checking section as this prototype does have an uppercase version with static compile time checking too :**
+
+```c
+[FUNCTION_PROTOTYPE]
+```

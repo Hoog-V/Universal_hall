@@ -1,0 +1,3826 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../usb_compatibility/">
+      
+      
+        <link rel="next" href="../platform/atmelsam/About/">
+      
+      
+      <link rel="icon" href="../../../assets/Universal_hal_logo_top_bar.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>General API - Universal_hal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usb-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Universal_hal" class="md-header__button md-logo" aria-label="Universal_hal" data-md-component="logo">
+      
+  <img src="../../../assets/Universal_hal_logo_top_bar.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Universal_hal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Universal_hal" class="md-nav__button md-logo" aria-label="Universal_hal" data-md-component="logo">
+      
+  <img src="../../../assets/Universal_hal_logo_top_bar.svg" alt="logo">
+
+    </a>
+    Universal_hal
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GPIO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GPIO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/gpio_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/gpio_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3_1" id="__nav_2_1_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPIO/platform/atmelsam/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    I2C Host
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            I2C Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/i2c_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/i2c_host_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1" id="__nav_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_host/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_1_4" id="__nav_2_2_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Doxygen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_2_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Doxygen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/annotated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struct List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/class_member_variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Struct Member Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/macros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Macros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atmelsam_i2c_host/files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    I2C Slave
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            I2C Slave
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/i2c_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/i2c_slave_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3_1" id="__nav_2_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../I2C_slave/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SPI Host
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            SPI Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/spi_host_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/spi_host_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1" id="__nav_2_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_host/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SPI Slave
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            SPI Slave
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/spi_slave_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/spi_slave_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3_1" id="__nav_2_5_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPI_slave/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UART
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            UART
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/uart_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/uart_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_3_1" id="__nav_2_6_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UART/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DMA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            DMA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/dma_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/dma_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3_1" id="__nav_2_7_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DMA/platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            USB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usb_compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compatibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    General API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_init-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_init function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_init function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_available-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_available function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_available function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_write_bytes-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_write_bytes function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_write_bytes function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_read_bytes-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_read_bytes function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_read_bytes function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_write_string-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_write_string function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_write_string function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_read_string-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_read_string function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_read_string function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_read_char-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_read_char function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_read_char function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_deinit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_deinit function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_deinit function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_3" id="__nav_2_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API platform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            API platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_3_1" id="__nav_2_8_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SAMD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            SAMD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/About/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/Usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform/atmelsam/Critical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code_style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code style
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_init-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_init function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_init function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_available-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_available function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_available function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_write_bytes-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_write_bytes function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_write_bytes function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_read_bytes-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_read_bytes function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_read_bytes function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_write_string-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_write_string function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_write_string function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_read_string-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_read_string function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_read_string function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_read_char-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_read_char function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_read_char function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_serial_deinit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      usb_serial_deinit function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usb_serial_deinit function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-checking_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Checking:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="usb-api">USB API</h1>
+<h2 id="api-functionality">API Functionality</h2>
+<p>The API for USB functionality has the following functions available:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial driver initialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">usb_clock_sources_t</span><span class="w"> </span><span class="n">clock_source</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">clock_frequency</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial data availability check function (without compile-time parameter checking) */</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int8_t</span><span class="w"> </span><span class="nf">usb_serial_available</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial data transmission function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_write_bytes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial data reception function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_read_bytes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial string transmission function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_write_string</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial string reception function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_read_string</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">read_until_newline</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial character reception function (without compile-time parameter checking) */</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">usb_serial_read_char</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial deinitialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_deinit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="usb_serial_init-function">usb_serial_init function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial driver initialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">usb_clock_sources_t</span><span class="w"> </span><span class="n">clock_source</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">clock_frequency</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial driver initialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">USB_SERIAL_INIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="n">usb_clock_sources_t</span><span class="w"> </span><span class="n">clock_source</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">clock_frequency</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description">Description:</h3>
+<p>The <code>usb_serial_init</code> and <code>USB_SERIAL_INIT</code> functions are designed to initialize a USB Serial interface with specific configurations.</p>
+<h3 id="error-checking">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_INIT</strong>: Capitalized to denote its usage, this version of the function incorporates compile-time parameter checking to validate the correctness of the provided arguments. Parameters such as <code>serial_instance</code> and <code>clock_source</code> are verified against predefined valid options at compile time, facilitating early detection of configuration errors before runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function when parameters are predetermined and known at compile time.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_init</strong>: This variant offers the identical functionality of initializing a USB Serial interface but without the compile-time parameter verification. It is suitable for scenarios where parameters may not be determined until runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Choose this function for more dynamic settings where parameters are decided during runtime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: Specifies the USB Serial instance to be initialized.</li>
+<li><strong>clock_source (const usb_clock_sources_t)</strong>: Defines the clock source for the USB Serial interface.</li>
+<li><strong>clock_frequency (const uint32_t)</strong>: Sets the frequency of the clock in Hertz used by the USB Serial interface.</li>
+</ol>
+<h3 id="return">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Returns a status code that indicates the outcome of the initialization process. For a comprehensive explanation of possible return values, refer to the "error_checking.h" header file.</li>
+</ul>
+<h3 id="working">Working:</h3>
+<ol>
+<li>The initialization begins with a verification process to check that the provided parameters are within acceptable limits.</li>
+<li>Following parameter validation, the function configures the specified <code>clock_source</code> for the USB Serial interface.</li>
+<li>The <code>clock_frequency</code> is then adjusted as specified, ensuring the interface operates at the desired clock rate.</li>
+<li>Upon successful configuration, the USB Serial interface is activated, ready for communication tasks.</li>
+</ol>
+<p>This setup process ensures that the USB Serial interface is properly configured and ready for subsequent communication operations, such as data transmission and reception.</p>
+<h2 id="usb_serial_available-function">usb_serial_available function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial data availability check function (without compile-time parameter checking) */</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">usb_serial_available</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial data availability check function (with compile-time parameter checking) */</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">USB_SERIAL_AVAILABLE</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_1">Description:</h3>
+<p>The <code>usb_serial_available</code> and <code>USB_SERIAL_AVAILABLE</code> functions are designed to check the amount of data available to read from a specified USB Serial interface.</p>
+<h3 id="error-checking_1">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_AVAILABLE</strong>: Capitalized for emphasis, this variant includes compile-time parameter checking to validate the <code>serial_instance</code> against predefined valid instances. This compile-time validation ensures that the parameter provided is correct and can help catch configuration or usage errors early in the development process.</p>
+<ul>
+<li><strong>Usage Note</strong>: This function is intended for use when the <code>serial_instance</code> parameter is known at compile time and can be validated against existing configurations.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_available</strong>: This version provides the same functionality as its uppercase counterpart but without compile-time parameter checking. It is suitable for scenarios where the serial instance may be determined dynamically at runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function when the <code>serial_instance</code> parameter may vary during the execution of the application.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_1">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: The USB Serial instance for which the data availability is being queried.</li>
+</ol>
+<h3 id="return_1">Return:</h3>
+<ul>
+<li><strong>const uint8_t</strong>: Returns the number of bytes available for reading from the specified USB Serial interface. This can be used to determine if data is ready to be read without blocking the calling thread.</li>
+</ul>
+<h3 id="working_1">Working:</h3>
+<p>The function checks the internal buffer of the specified USB Serial instance to determine how much data is available. This allows applications to efficiently manage data reading operations by ensuring that read operations are attempted only when data is actually available, thereby avoiding unnecessary blocking or polling.</p>
+<p>This method is particularly useful in event-driven or non-blocking I/O scenarios where the application can perform other tasks or enter a low-power state while waiting for data to become available on the USB Serial interface.</p>
+<h2 id="usb_serial_write_bytes-function">usb_serial_write_bytes function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial data transmission function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_write_bytes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial data transmission function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">USB_SERIAL_WRITE_BYTES</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_2">Description:</h3>
+<p>The <code>usb_serial_write_bytes</code> and <code>USB_SERIAL_WRITE_BYTES</code> functions are designed to transmit a sequence of bytes over a USB Serial interface, using a specified USB Serial instance.</p>
+<h3 id="error-checking_2">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_WRITE_BYTES</strong>: Presented in uppercase, this variant includes compile-time parameter checking to validate the <code>serial_instance</code> against pre-defined valid instances and ensures that the <code>buffer</code> and <code>size</code> parameters are correctly provided. This level of validation at compile time assists in identifying misconfigurations or potential errors before the code is executed, contributing to a more robust and error-resistant implementation.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function when the parameters, especially the <code>serial_instance</code>, are known at compile time and can be statically checked for validity.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_write_bytes</strong>: This version offers identical functionality for sending data over a USB Serial interface but does not include compile-time checks for the parameters. It is intended for situations where the serial instance or data to be sent may not be determined until runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function when dealing with dynamic data or when the <code>serial_instance</code> may vary during application execution.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_2">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: The USB Serial instance through which the data will be transmitted.</li>
+<li><strong>buffer (const uint8_t*)</strong>: A pointer to the array of bytes that are to be sent.</li>
+<li><strong>size (const size_t)</strong>: The number of bytes to transmit from the <code>buffer</code>.</li>
+</ol>
+<h3 id="return_2">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Returns a status code indicating the success or failure of the data transmission process. For detailed explanations of possible return values, refer to the "error_checking.h" header file.</li>
+</ul>
+<h3 id="working_2">Working:</h3>
+<ol>
+<li>The function first verifies that the <code>serial_instance</code> is valid and that the <code>buffer</code> and <code>size</code> parameters are correctly specified.</li>
+<li>It then queues the bytes from the <code>buffer</code> for transmission over the specified USB Serial interface.</li>
+<li>The function manages the actual data transmission, ensuring that all bytes in the <code>buffer</code> are sent according to the specified <code>size</code>.</li>
+<li>Upon completion, the function returns a status indicating the outcome of the transmission operation, such as success, partial transmission, or failure due to errors.</li>
+</ol>
+<h2 id="usb_serial_read_bytes-function">usb_serial_read_bytes function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial data reception function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_read_bytes</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial data reception function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">USB_SERIAL_READ_BYTES</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                    </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_3">Description:</h3>
+<p>The <code>usb_serial_read_bytes</code> and <code>USB_SERIAL_READ_BYTES</code> functions are designed for receiving a specified number of bytes from a USB Serial interface into a provided buffer.</p>
+<h3 id="error-checking_3">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_READ_BYTES</strong>: Highlighted in uppercase, this variant incorporates compile-time parameter checking to ensure the correctness of the <code>serial_instance</code>. This compile-time validation confirms that the <code>serial_instance</code> provided is among predefined valid instances and that the <code>buffer</code> and <code>size</code> parameters are appropriately set up. This preemptive check aids in catching misconfigurations or potential errors early in the development cycle, contributing to a more reliable implementation.</p>
+<ul>
+<li><strong>Usage Note</strong>: Employ this function when the <code>serial_instance</code> and the size of data to be read are known at compile time, allowing for static verification of the parameters' validity.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_read_bytes</strong>: This version offers the same functionality for data reception via a USB Serial interface but without the compile-time checks for <code>serial_instance</code>, <code>buffer</code>, and <code>size</code>. It is tailored for situations where the serial instance to be used or the amount of data to be read may not be fixed until runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function in more dynamic scenarios where the <code>serial_instance</code> or the amount of data to be received can vary during the application's operation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_3">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: Identifies the USB Serial instance from which data is to be received.</li>
+<li><strong>buffer (uint8_t *)</strong>: Points to the memory location where the received data will be stored.</li>
+<li><strong>size (const size_t)</strong>: Specifies the number of bytes to read into the <code>buffer</code>.</li>
+</ol>
+<h3 id="return_3">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Returns a status indicating the outcome of the read operation. Success, partial data reception, or failure due to errors such as buffer overflow or communication issues are among the possible return values. Refer to the "error_checking.h" header file for a detailed explanation of return codes.</li>
+</ul>
+<h3 id="working_3">Working:</h3>
+<ol>
+<li>The function initiates by validating that the <code>serial_instance</code> is configured correctly and that the <code>buffer</code> and <code>size</code> are suitable for receiving the specified amount of data.</li>
+<li>It then proceeds to read bytes from the USB Serial interface, storing them into the <code>buffer</code> until the <code>size</code> number of bytes has been received.</li>
+<li>The function handles any communication errors or buffer management issues that may occur during the data reception process.</li>
+<li>Upon completion, a status is returned to indicate the success level of the data reception, providing insight into whether the operation was completed as expected or if issues were encountered.</li>
+</ol>
+<h2 id="usb_serial_write_string-function">usb_serial_write_string function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial string transmission function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_write_string</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial string transmission function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">USB_SERIAL_WRITE_STRING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                      </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_4">Description:</h3>
+<p>The <code>usb_serial_write_string</code> and <code>USB_SERIAL_WRITE_STRING</code> functions are tailored for sending a null-terminated string over a specified USB Serial interface. These functions simplify the process of transmitting text data, making it straightforward to send messages or commands via USB Serial communication.</p>
+<h3 id="error-checking_4">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_WRITE_STRING</strong>: This uppercase version denotes the function that incorporates compile-time parameter checking, ensuring that the <code>serial_instance</code> provided corresponds to a valid, predefined USB Serial instance. Additionally, it verifies that the <code>buffer</code> parameter is a valid pointer. This level of scrutiny at compile time assists in preemptively identifying misconfigurations or errors, enhancing the reliability and stability of the implementation.</p>
+<ul>
+<li><strong>Usage Note</strong>: Employ this function when the <code>serial_instance</code> is a known constant at compile time, allowing for static validation of parameters for added security and robustness.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_write_string</strong>: Offers identical functionality for string transmission over USB Serial without compile-time checks on the <code>serial_instance</code> and <code>buffer</code>. This version is more flexible, accommodating scenarios where the serial instance or the string to be sent may be determined dynamically during runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Choose this function when dealing with dynamic conditions where the <code>serial_instance</code> or the message content might change over time or are not known until the point of execution.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_4">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: Specifies the USB Serial instance through which the string will be transmitted.</li>
+<li><strong>buffer (const char *)</strong>: A pointer to a null-terminated string that contains the data to be sent.</li>
+</ol>
+<h3 id="return_4">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Returns a status indicating the success or failure of the string transmission. The function can return values denoting complete success, partial transmission if the buffer could not be fully sent, or failure due to communication errors. Detailed definitions of possible return values can be found in the "error_checking.h" header file.</li>
+</ul>
+<h3 id="working_4">Working:</h3>
+<ol>
+<li>Initially, the function checks that the <code>serial_instance</code> is valid and that the <code>buffer</code> points to a null-terminated string.</li>
+<li>It then proceeds to transmit the characters of the string sequentially over the USB Serial interface until it reaches the null terminator, marking the end of the string.</li>
+<li>The function manages the data transmission, ensuring the string is sent in its entirety or identifying any issues that might prevent successful completion.</li>
+<li>Upon finishing the transmission, it returns a status to indicate whether the string was successfully sent, partially sent, or if the operation failed.</li>
+</ol>
+<h2 id="usb_serial_read_string-function">usb_serial_read_string function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial string reception function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_read_string</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">read_until_newline</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial string reception function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">USB_SERIAL_READ_STRING</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                     </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">read_until_newline</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_5">Description:</h3>
+<p>The <code>usb_serial_read_string</code> and <code>USB_SERIAL_READ_STRING</code> functions are tailored to receive a string from a USB Serial interface, storing it into a provided buffer. These functions are designed with flexibility to either read a specified number of characters or to stop reading upon encountering a newline character, depending on the <code>read_until_newline</code> parameter.</p>
+<h3 id="error-checking_5">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_READ_STRING</strong>: Presented in uppercase, this variant integrates compile-time parameter checking to verify the <code>serial_instance</code> against predefined valid instances. It also ensures that the <code>buffer</code> and <code>size</code> parameters are suitably provided, and that the <code>read_until_newline</code> flag is a valid boolean value. This preemptive validation at compile time aids in identifying potential misconfigurations or errors early, enhancing the implementation's reliability.</p>
+<ul>
+<li><strong>Usage Note</strong>: Utilize this function when the parameters, particularly the <code>serial_instance</code>, are known constants at compile time, allowing for static validation and ensuring a robust setup.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_read_string</strong>: This version provides the same functionality for string reception via USB Serial without compile-time checks on the <code>serial_instance</code>, <code>buffer</code>, <code>size</code>, and <code>read_until_newline</code>. It accommodates scenarios where the serial instance or data reading criteria may be decided dynamically during runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Choose this function in scenarios where flexibility is required, such as when the <code>serial_instance</code> or reading conditions may vary over time or are determined based on runtime conditions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_5">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: Identifies the USB Serial instance from which the string is to be received.</li>
+<li><strong>buffer (char *)</strong>: Points to the memory location where the received string will be stored.</li>
+<li><strong>size (const size_t)</strong>: Specifies the maximum number of characters to read into the <code>buffer</code>, including the null terminator.</li>
+<li><strong>read_until_newline (const uint8_t)</strong>: A flag indicating whether to stop reading after a newline character is received (<code>1</code>) or to read until the <code>size</code> limit is reached (<code>0</code>).</li>
+</ol>
+<h3 id="return_5">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Returns a status indicating the success or failure of the string reception. Possible values include success, partial reception if the buffer becomes full before reaching a newline, or failure due to communication errors or buffer issues. Refer to the "error_checking.h" header file for detailed explanations of return codes.</li>
+</ul>
+<h3 id="working_5">Working:</h3>
+<ol>
+<li>The function begins by ensuring that the <code>serial_instance</code> is correctly configured and that the <code>buffer</code> and <code>size</code> are suitable for the intended operation.</li>
+<li>It reads characters from the USB Serial interface into the <code>buffer</code>, adhering to the specified <code>size</code> limit and optionally stopping at a newline character if <code>read_until_newline</code> is set to <code>1</code>.</li>
+<li>The function manages the reception process, handling any issues that might arise, such as buffer overflows or communication errors.</li>
+<li>Upon completion, it returns a status to indicate the outcome of the reception, informing the caller of successful data acquisition, incomplete reception, or failure.</li>
+</ol>
+<h2 id="usb_serial_read_char-function">usb_serial_read_char function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial character reception function (without compile-time parameter checking) */</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int8_t</span><span class="w"> </span><span class="nf">usb_serial_read_char</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial character reception function (with compile-time parameter checking) */</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int8_t</span><span class="w"> </span><span class="nf">USB_SERIAL_READ_CHAR</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_6">Description:</h3>
+<p>The <code>usb_serial_read_char</code> and <code>USB_SERIAL_READ_CHAR</code> functions are designed to read a single character from a specified USB Serial interface. These functions streamline the process of receiving data by providing a simple method for retrieving one byte of information at a time from the serial buffer.</p>
+<h3 id="error-checking_6">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_READ_CHAR</strong>: Indicated in uppercase, this version includes compile-time parameter checking to confirm the <code>serial_instance</code> against predefined valid instances. This ensures that the <code>serial_instance</code> provided is correct and helps in identifying configuration or usage errors before runtime, thus enhancing the robustness of the implementation.</p>
+<ul>
+<li><strong>Usage Note</strong>: Use this function when the <code>serial_instance</code> is a known constant at compile time, enabling static verification of the parameter's validity for increased safety and reliability.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_read_char</strong>: Offers the same functionality for reading a character from a USB Serial interface but without compile-time checks for the <code>serial_instance</code>. It is intended for scenarios where the serial instance may be determined dynamically, providing flexibility in applications where runtime conditions dictate serial communication dynamics.</p>
+<ul>
+<li><strong>Usage Note</strong>: Opt for this function in dynamic scenarios where the <code>serial_instance</code> may change or is determined at runtime, requiring a more flexible approach to serial communication.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_6">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: Specifies the USB Serial instance from which the character is to be read.</li>
+</ol>
+<h3 id="return_6">Return:</h3>
+<ul>
+<li><strong>const uint8_t</strong>: Returns the character read from the specified USB Serial interface. If no data is available, the returned value is equal to -1</li>
+</ul>
+<h3 id="working_6">Working:</h3>
+<ol>
+<li>The function starts by ensuring that the <code>serial_instance</code> specified is valid and ready for data reception.</li>
+<li>It then attempts to read a single character from the USB Serial buffer associated with the <code>serial_instance</code>.</li>
+<li>The process involves checking the serial buffer for available data and retrieving one byte (character) if available.</li>
+<li>Upon successful reading, the character is returned to the caller. If no data is available or an error occurs, the function's response will depend on its defined error handling or return value conventions.</li>
+</ol>
+<h2 id="usb_serial_deinit-function">usb_serial_deinit function</h2>
+<div class="highlight"><pre><span></span><code><span class="cm">/* USB Serial deinitialization function (without compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">usb_serial_deinit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+
+<span class="cm">/* USB Serial deinitialization function (with compile-time parameter checking) */</span>
+<span class="n">uhal_status_t</span><span class="w"> </span><span class="nf">USB_SERIAL_DEINIT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">usb_serial_inst_t</span><span class="w"> </span><span class="n">serial_instance</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="description_7">Description:</h3>
+<p>The <code>usb_serial_deinit</code> and <code>USB_SERIAL_DEINIT</code> functions are designed to properly deinitialize a previously initialized USB Serial interface. These functions ensure that any resources allocated during the operation of the USB Serial instance are correctly released and that the instance is returned to a default state, ready for re-initialization if necessary.</p>
+<h3 id="error-checking_7">Error Checking:</h3>
+<ul>
+<li>
+<p><strong>USB_SERIAL_DEINIT</strong>: Presented in uppercase, this version includes compile-time parameter checking to confirm the <code>serial_instance</code> against predefined valid instances. This compile-time validation ensures the correctness and appropriateness of the <code>serial_instance</code>, aiding in the prevention of errors related to invalid or uninitialized instances prior to runtime.</p>
+<ul>
+<li><strong>Usage Note</strong>: Utilize this function when the <code>serial_instance</code> is a known constant at compile time, allowing for static verification of the parameter's validity. This is particularly useful in statically configured environments where the serial configuration is known beforehand and can be validated for correctness.</li>
+</ul>
+</li>
+<li>
+<p><strong>usb_serial_deinit</strong>: Provides the same functionality for deinitializing a USB Serial interface but without compile-time checks for the <code>serial_instance</code>. This version offers flexibility for dynamically configured systems where the serial instance may vary over time or be determined based on runtime conditions.</p>
+<ul>
+<li><strong>Usage Note</strong>: Choose this function in scenarios requiring dynamic handling of USB Serial instances, such as applications that might reconfigure serial connections based on user input or other runtime conditions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters_7">Parameters:</h3>
+<ol>
+<li><strong>serial_instance (const usb_serial_inst_t)</strong>: Specifies the USB Serial instance to be deinitialized.</li>
+</ol>
+<h3 id="return_7">Return:</h3>
+<ul>
+<li><strong>uhal_status_t</strong>: Returns a status indicating the success or failure of the deinitialization process. The function can return values indicating successful deinitialization, failure due to errors such as invalid instance specifications, or other issues encountered during the release of resources. Detailed explanations of possible return values should be consulted in the "error_checking.h" header file.</li>
+</ul>
+<h3 id="working_7">Working:</h3>
+<ol>
+<li>The function begins by validating the provided <code>serial_instance</code> to ensure it is a currently active and valid USB Serial interface.</li>
+<li>It then proceeds to disable the USB Serial interface, carefully releasing any resources, such as memory or hardware locks, that were allocated during its operation.</li>
+<li>The function also ensures any ongoing or pending serial communications are properly concluded or aborted to avoid leaving the system in an inconsistent state.</li>
+<li>Following the successful release of resources and deactivation of the interface, the function returns a status indicating the outcome of the deinitialization process.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../../../javascript/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

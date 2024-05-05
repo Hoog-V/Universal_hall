@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="hal__i2c__host_8h" kind="file"><name>hal_i2c_host.h</name>
+    <member refid="hal__i2c__host_8h_1aee3e721fbf6fcabc4e1b9a4d52629e4e" kind="define"><name>I2C_HOST_INIT</name></member>
+    <member refid="hal__i2c__host_8h_1a0d544b5461ec5bee7a94944633fd2c21" kind="define"><name>I2C_HOST_DEINIT</name></member>
+    <member refid="hal__i2c__host_8h_1afe2f22ad9f77685ae7634b07b3da1e18" kind="define"><name>I2C_HOST_WRITE_BLOCKING</name></member>
+    <member refid="hal__i2c__host_8h_1ac7c2fa11632a7d8c47258b910bb91ed3" kind="define"><name>I2C_HOST_WRITE_NON_BLOCKING</name></member>
+    <member refid="hal__i2c__host_8h_1a5470ae4f625b32dd3d9197ea4ff8c518" kind="define"><name>I2C_HOST_READ_BLOCKING</name></member>
+    <member refid="hal__i2c__host_8h_1a7527b5aeeeb38dc6c14b42bc77ddfa19" kind="define"><name>I2C_HOST_READ_NON_BLOCKING</name></member>
+    <member refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333a" kind="enum"><name>i2c_stop_bit_t</name></member>
+    <member refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aaae88daedd7161b59735bf54fe503aa0f" kind="enumvalue"><name>I2C_NO_STOP_BIT</name></member>
+    <member refid="hal__i2c__host_8h_1af9cb411e0e160cd89f72b9521e67333aafa87bde35174bc6e36da878ab698f9bf" kind="enumvalue"><name>I2C_STOP_BIT</name></member>
+    <member refid="hal__i2c__host_8h_1aa08f5339631e7c4107c9950609220002" kind="function"><name>i2c_host_init</name></member>
+    <member refid="hal__i2c__host_8h_1adefc131ffd51d1bb5f877e2f3dd24fc0" kind="function"><name>i2c_host_deinit</name></member>
+    <member refid="hal__i2c__host_8h_1aa93ce82617367d01b189c22f0cf914c2" kind="function"><name>i2c_host_write_blocking</name></member>
+    <member refid="hal__i2c__host_8h_1a6064ab9b16f0bdb5f365ad432755851d" kind="function"><name>i2c_host_write_non_blocking</name></member>
+    <member refid="hal__i2c__host_8h_1a97e3b962db47c11e3d511b6cb6b951c3" kind="function"><name>i2c_host_read_blocking</name></member>
+    <member refid="hal__i2c__host_8h_1a60bba309fb0bfe9c36034936d7786207" kind="function"><name>i2c_host_read_non_blocking</name></member>
+    <member refid="hal__i2c__host_8h_1a9989445a908f81c4288bb7acf2919b27" kind="function"><name>i2c_host_data_recv_irq</name></member>
+    <member refid="hal__i2c__host_8h_1acfeec02f655559ce321e8e6bd3aa5b85" kind="function"><name>i2c_host_data_send_irq</name></member>
+  </compound>
+  <compound refid="dir_52c912f73dac9c4c0e442232e1b2bd80" kind="dir"><name>hal</name>
+  </compound>
+</doxygenindex>
