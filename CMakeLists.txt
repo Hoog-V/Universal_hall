@@ -22,14 +22,14 @@ set(UHAL_FILEPATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 option(PLATFORM_DEFINED "The platform to build for" "")
 if (PLATFORM_DEFINED MATCHES "^__SAMD21")
-    option(UHAL_DISABLE_GPIO_MODULE "Disable the GPIO module" NO)
-    option(UHAL_DISABLE_I2C_HOST_MODULE "Disable the I2C Host module" NO)
-    option(UHAL_DISABLE_I2C_SLAVE_MODULE "Disable the I2C Slave module" NO)
-    option(UHAL_DISABLE_SPI_HOST_MODULE "Disable the SPI Host module" NO)
-    option(UHAL_DISABLE_SPI_SLAVE_MODULE "Disable the SPI Slave module" NO)
-    option(UHAL_ENABLE_USB_SERIAL_MODULE "Enable the USB serial module" NO)
+  option(UHAL_DISABLE_GPIO_MODULE "Disable the GPIO module" NO)
+  option(UHAL_DISABLE_I2C_HOST_MODULE "Disable the I2C Host module" NO)
+  option(UHAL_DISABLE_I2C_SLAVE_MODULE "Disable the I2C Slave module" NO)
+  option(UHAL_DISABLE_SPI_HOST_MODULE "Disable the SPI Host module" NO)
+  option(UHAL_DISABLE_SPI_SLAVE_MODULE "Disable the SPI Slave module" NO)
+  option(UHAL_ENABLE_USB_SERIAL_MODULE "Enable the USB serial module" NO)
 
-    add_library(Universal_hal 
+  add_library(Universal_hal
             "hal/platform/atmelsam/irq/irq_bindings.c"
             "hal/platform/atmelsam/gpio/gpio_samd.c"
             "hal/platform/atmelsam/i2c_host/i2c.c"
@@ -39,29 +39,29 @@ if (PLATFORM_DEFINED MATCHES "^__SAMD21")
             "hal/platform/atmelsam/dma/dma.c"
             "hal/platform/atmelsam/uart/uart.c"
             )
-    target_include_directories(Universal_hal PUBLIC "hal/" "utils/" "hal/platform/atmelsam/")
+  target_include_directories(Universal_hal PUBLIC "hal/" "utils/" "hal/platform/atmelsam/")
 
-    if(UHAL_DISABLE_GPIO_MODULE)
+  if(UHAL_DISABLE_GPIO_MODULE)
     add_compile_definitions("DISABLE_GPIO_MODULE")
-    endif()
+  endif()
 
-    if(UHAL_DISABLE_I2C_HOST_MODULE)
+  if(UHAL_DISABLE_I2C_HOST_MODULE)
     add_compile_definitions("DISABLE_I2C_HOST_MODULE")
-    endif()
+  endif()
 
-    if(UHAL_DISABLE_I2C_SLAVE_MODULE)
+  if(UHAL_DISABLE_I2C_SLAVE_MODULE)
     add_compile_definitions("DISABLE_I2C_SLAVE_MODULE")
-    endif()
+  endif()
 
-    if(UHAL_DISABLE_SPI_HOST_MODULE)
+  if(UHAL_DISABLE_SPI_HOST_MODULE)
     add_compile_definitions("DISABLE_SPI_HOST_MODULE")
-    endif()
+  endif()
 
-    if(UHAL_DISABLE_SPI_SLAVE_MODULE)
+  if(UHAL_DISABLE_SPI_SLAVE_MODULE)
     add_compile_definitions("DISABLE_SPI_SLAVE_MODULE")
-    endif()
+  endif()
 
-    if(UHAL_ENABLE_USB_SERIAL_MODULE)
+  if(UHAL_ENABLE_USB_SERIAL_MODULE)
     add_library(Universal_hal_usb STATIC "${CMAKE_CURRENT_LIST_DIR}/middleware/usb/platform/atmelsam/usb_serial_samd.c"
                                          "${CMAKE_CURRENT_LIST_DIR}/middleware/usb/lib/src/portable/microchip/samd/dcd_samd.c")
     target_include_directories(Universal_hal_usb PUBLIC "${CMAKE_CURRENT_LIST_DIR}/middleware/usb/"
@@ -71,7 +71,7 @@ if (PLATFORM_DEFINED MATCHES "^__SAMD21")
 
     add_library(tinyusb_config INTERFACE)
 
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/middleware/usb/lib/src)    
+    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/middleware/usb/lib/src)
 
     add_library(Universal_hal_usb_conf INTERFACE )
 
@@ -90,13 +90,20 @@ elseif(PLATFORM_DEFINED MATCHES "^PICO")
                              "hal/platform/raspberrypi/uart/uart.c")
   target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/raspberrypi")
   target_link_libraries(Universal_hal pico_stdlib hardware_spi hardware_i2c hardware_uart)
+elseif (PLATFORM_DEFINED MATCHES "^SOC_XWR68")
+  set(UHAL_BUILD_TESTS NO)
+  MESSAGE(STATUS "TI mmWave IWR68xx Platform detected!")
+  add_library(Universal_hal "hal/platform/ti/iwr68xx/gpio/gpio_iwr68xx.c"
+                            "hal/platform/ti/iwr68xx/pinmux/pinmux_iwr68xx.c")
+  target_include_directories(Universal_hal PUBLIC "hal/" "hal/platform/ti/iwr68xx")
 else ()
-    # You can define your OS here if desired
-    MESSAGE(STATUS "No MCU platform selected!")
+  # You can define your OS here if desired
+  MESSAGE(STATUS "No MCU platform selected!")
 endif ()
 
 if(UHAL_BUILD_TESTS)
-MESSAGE(STATUS "Building tests!")
-enable_testing()
-add_subdirectory(test/atmelsam)
+  MESSAGE(STATUS "Building tests!")
+  enable_testing()
+  add_subdirectory(test/atmelsam)
+  add_subdirectory(test/ti_iwr68xx)
 endif()
